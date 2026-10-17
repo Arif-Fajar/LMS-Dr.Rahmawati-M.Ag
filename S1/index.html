@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LMS Ilmu Fikih — Dr. Rahmawati, M.Ag</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../shared/core.css">
+    <link rel="stylesheet" href="fikih-theme.css">
+
+    <style>
+        .materi-pokok-list { display: flex; flex-direction: column; gap: 10px; margin: 10px 0 18px; }
+        .materi-pokok-item { padding: 14px 18px; }
+        .materi-pokok-item summary {
+            cursor: pointer;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.02rem;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .materi-pokok-item summary::-webkit-details-marker { display: none; }
+        .materi-pokok-item summary::after {
+            content: "+";
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            flex: none;
+            opacity: .7;
+            transition: transform .2s ease;
+        }
+        .materi-pokok-item[open] summary::after { content: "–"; }
+        .materi-pokok-detail {
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid var(--line);
+            font-size: .95rem;
+            line-height: 1.7;
+        }
+        .materi-pokok-detail h4 {
+            font-family: var(--font-display);
+            font-size: .98rem;
+            margin: 16px 0 6px;
+        }
+        .materi-pokok-detail h4:first-child { margin-top: 0; }
+        .materi-pokok-detail p { margin: 0 0 10px; }
+        .rangkuman-board {
+            margin-top: 14px;
+            padding: 14px 16px;
+            border-radius: var(--radius-s);
+            background: var(--parchment-dim, rgba(255,204,0,.08));
+            border: 1px solid var(--line-strong);
+        }
+        .rangkuman-board strong {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: .78rem;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            opacity: .8;
+        }
+        .rangkuman-board p { margin: 0; font-size: .93rem; line-height: 1.65; }
+        .materi-pokok-plain { margin: 0 0 8px; }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header id="site-header">
+
+        <div class="container">
+
+            <a href="#home" class="logo" data-page="home">
+                <h2>LMS Ilmu Fikih</h2>
+                <span>UIN Palopo</span>
+            </a>
+
+            <nav id="main-nav">
+
+                <ul>
+
+                    <li><a href="#home" data-page="home" class="nav-link active">Beranda</a></li>
+                    <li><a href="#profil" data-page="profil" class="nav-link">Profil</a></li>
+                    <li><a href="#rps" data-page="rps" class="nav-link">RPS</a></li>
+                    <li><a href="#materi" data-page="materi" class="nav-link">Materi</a></li>
+                    <li><a href="#video" data-page="video" class="nav-link">Video</a></li>
+                    <li><a href="#kasus" data-page="kasus" class="nav-link">Studi Kasus</a></li>
+                    <li><a href="#quiz" data-page="quiz" class="nav-link">Quiz</a></li>
+                    <li><a href="#ujian" data-page="ujian" class="nav-link">UTS/UAS</a></li>
+                    <li><a href="#referensi" data-page="referensi" class="nav-link">Referensi</a></li>
+                    <li><a href="#download" data-page="download" class="nav-link">Download</a></li>
+                    <li><a href="#kontak" data-page="kontak" class="nav-link">Kontak</a></li>
+
+                </ul>
+
+            </nav>
+
+            <div class="header-action">
+
+                <button id="theme-toggle" type="button" aria-label="Ganti tema">Theme</button>
+                <button id="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false">Menu</button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HOME / HERO (halaman dasar, selalu di belakang) ================= -->
+
+    <main id="page-home" class="app-page is-home is-active">
+
+        <section id="hero">
+
+            <div class="container">
+
+                <div class="hero-left">
+
+                    <div class="badge-container">
+                        <span>Program Pascasarjana</span>
+                    </div>
+
+                    <h1>Ilmu<br>Fikih</h1>
+
+                    <p>
+                        Mata kuliah Ilmu Fikih membahas dasar-dasar hukum Islam yang berkaitan dengan ibadah dan muamalah sebagai pedoman hidup umat Islam — mulai dari pengantar fikih, sumber hukum Islam, kaidah-kaidah fikih, thaharah, shalat, zakat, puasa, haji, hingga muamalah kontemporer seperti riba dan ekonomi syariah.
+                    </p>
+
+                    <div class="hero-button">
+                        <button type="button" data-goto="rps">Mulai Belajar</button>
+                        <button type="button" class="ghost" data-goto="rps">RPS</button>
+                        <button type="button" class="ghost" data-goto="materi">Materi</button>
+                        <button type="button" class="ghost" data-goto="video">Video</button>
+                        <button type="button" class="ghost" data-goto="quiz">Quiz</button>
+                    </div>
+
+                </div>
+
+                <div class="hero-right">
+
+                    <div class="hero-animation">
+                        <div class="edu-stage">
+                            <svg class="edu-star-field" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(160,160)">
+                                    <polygon points="0,-120 14,-40 90,-84 34,-14 120,0 34,14 90,84 14,40 0,120 -14,40 -90,84 -34,14 -120,0 -34,-14 -90,-84 -14,-40" />
+                                    <polygon points="0,-80 10,-26 60,-56 22,-9 80,0 22,9 60,56 10,26 0,80 -10,26 -60,56 -22,9 -80,0 -22,-9 -60,-56 -10,-26" opacity="0.6"/>
+                                    <circle r="140" opacity="0.3"/>
+                                    <circle r="100" opacity="0.25"/>
+                                </g>
+                            </svg>
+
+                            <div class="edu-glow"></div>
+
+                            <div class="edu-book">
+                                <div class="edu-crescent"></div>
+                                <div class="edu-spine"></div>
+                                <div class="edu-page edu-left">
+                                    <div class="edu-lines"><span></span><span></span><span></span><span></span></div>
+                                </div>
+                                <div class="edu-page edu-right">
+                                    <div class="edu-lines"><span></span><span></span><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-card">
+                        <strong>Progress Belajar</strong>
+                        <div class="progress-bar"><span id="home-progress-bar" style="width:0%"></span></div>
+                        <small id="home-progress-text">0 / 16 pertemuan selesai</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="faq">
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Sering ditanyakan</span>Pertanyaan Umum</h2>
+
+                <div class="faq-list">
+
+                    <details class="card faq-item">
+                        <summary>Berapa jumlah pertemuan mata kuliah ini?</summary>
+                        <p>Perkuliahan berlangsung 16 pertemuan, termasuk UTS pada pertemuan ke-8 dan UAS pada pertemuan ke-16.</p>
+                    </details>
+
+                    <details class="card faq-item">
+                        <summary>Bagaimana bobot penilaian akhir dihitung?</summary>
+                        <p>Penilaian terdiri atas tugas &amp; partisipasi mingguan (Pertemuan 1-7, 9-15), UTS 20%, dan UAS 20%, dengan bobot rinci tiap pertemuan mengikuti kolom Penilaian pada RPS.</p>
+                    </details>
+
+                    <details class="card faq-item">
+                        <summary>Siapa dosen pengampu mata kuliah ini?</summary>
+                        <p>Mata kuliah diampu oleh Dr. Rahmawati, M.Ag selaku Dosen Pengembang RPS &amp; Koordinator MK, dengan Ketua Program Studi Nirwana Halide, S.H., M.H.</p>
+                    </details>
+
+                    <details class="card faq-item">
+                        <summary>Apa metode pembelajaran yang digunakan?</summary>
+                        <p>Kombinasi ceramah interaktif, diskusi kelompok, problem based learning, simulasi/praktikum (wudhu &amp; tayammum), cooperative learning, case method, dan project based learning sesuai topik tiap pertemuan.</p>
+                    </details>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+
+            <div class="container">
+
+                <h3>LMS Ilmu Fikih</h3>
+
+                <p>Program Studi Hukum Islam</p>
+                <p>Program Pascasarjana UIN Palopo</p>
+
+                <p>© 2026 UIN Palopo</p>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- ================= SUB-PAGES (overlay di atas Beranda) ================= -->
+
+    <div id="pages-root">
+
+        <!-- ================= PROFIL ================= -->
+
+        <section id="page-profil" class="app-page" data-title="Profil Mata Kuliah">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Profil</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Profil</span>Profil Mata Kuliah</h2>
+
+                <div class="profile-tables">
+
+                    <article class="profile-block full-width">
+                        <h3>Ringkasan Mata Kuliah</h3>
+                        <table class="profile-table kv">
+                            <tbody>
+                                <tr>
+                                    <th>Deskripsi</th>
+                                    <td>Mata kuliah Ilmu Fikih membahas dasar-dasar hukum Islam yang berkaitan dengan ibadah dan muamalah sebagai pedoman hidup umat Islam. Kajian meliputi pengantar fikih, sumber hukum Islam, kaidah-kaidah fikih, thaharah, shalat, zakat, puasa, haji, serta muamalah kontemporer seperti riba dan ekonomi syariah. Mata kuliah ini mendukung mahasiswa Hukum Tata Negara untuk memahami hubungan fikih dengan sistem hukum Islam dan hukum positif secara aplikatif.</td>
+                                </tr>
+                                <tr>
+                                    <th>Tujuan</th>
+                                    <td>Mahasiswa mampu menjelaskan konsep dasar fikih, ruang lingkup, dan sumber hukum Islam secara sistematis; menerapkan kaidah fikih dan prinsip kemudahan dalam persoalan ibadah dan muamalah; mempraktikkan tata cara thaharah dan shalat; menganalisis hukum zakat, puasa, dan haji dalam konteks sosial kemasyarakatan; serta mengevaluasi persoalan muamalah modern seperti riba, kredit bank, dan paylater berdasarkan fikih muamalah.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="profile-block">
+                        <h3>CPMK</h3>
+                        <table class="profile-table">
+                            <colgroup>
+                                <col style="width:96px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr><th>Kode</th><th>Capaian Pembelajaran</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>CPMK 1</td><td>Menjelaskan konsep dasar fikih, ruang lingkup, serta sumber hukum Islam secara benar dan sistematis.</td></tr>
+                                <tr><td>CPMK 2</td><td>Menerapkan kaidah fikih dan prinsip kemudahan Islam dalam persoalan ibadah dan muamalah.</td></tr>
+                                <tr><td>CPMK 3</td><td>Mempraktikkan tata cara thaharah dan shalat sesuai ketentuan fikih.</td></tr>
+                                <tr><td>CPMK 4</td><td>Menganalisis hukum zakat, puasa, dan haji dalam konteks sosial kemasyarakatan.</td></tr>
+                                <tr><td>CPMK 5</td><td>Mengevaluasi persoalan muamalah modern seperti riba, kredit bank, dan paylater berdasarkan fikih muamalah.</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="profile-block">
+                        <h3>CPL</h3>
+                        <table class="profile-table">
+                            <colgroup>
+                                <col style="width:88px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr><th>Kode</th><th>Capaian Pembelajaran Lulusan</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>CPL 1</td><td>Bertakwa kepada Tuhan Yang Maha Esa dan menginternalisasi nilai agama, moralitas, kemanusiaan, dan etika profesi.</td></tr>
+                                <tr><td>CPL 3</td><td>Menguasai teori, asas, sumber, dan struktur hukum positif serta hukum Islam dalam bidang hukum tata negara.</td></tr>
+                                <tr><td>CPL 7</td><td>Mampu mengaplikasikan hukum Islam dan hukum positif dalam penyelesaian masalah serta adaptif terhadap situasi.</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="profile-block">
+                        <h3>Metode Pembelajaran</h3>
+                        <table class="profile-table">
+                            <colgroup>
+                                <col style="width:56px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr><th>No</th><th>Metode</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>01</td><td>Ceramah interaktif &amp; diskusi kelas</td></tr>
+                                <tr><td>02</td><td>Diskusi kelompok &amp; cooperative learning</td></tr>
+                                <tr><td>03</td><td>Problem based learning &amp; case method</td></tr>
+                                <tr><td>04</td><td>Simulasi/praktikum (wudhu &amp; tayammum)</td></tr>
+                                <tr><td>05</td><td>Presentasi &amp; project based learning</td></tr>
+                                <tr><td>06</td><td>Tanya jawab &amp; resume materi</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="profile-block">
+                        <h3>Komponen Penilaian</h3>
+                        <table class="profile-table weighted">
+                            <colgroup>
+                                <col>
+                                <col style="width:90px">
+                            </colgroup>
+                            <thead>
+                                <tr><th>Komponen</th><th>Bobot</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Tugas &amp; partisipasi mingguan (Pertemuan 1-7, 9-15)</td><td>60%</td></tr>
+                                <tr><td>Ujian Tengah Semester (UTS)</td><td>20%</td></tr>
+                                <tr><td>Ujian Akhir Semester (UAS)</td><td>20%</td></tr>
+                            </tbody>
+                            <tfoot>
+                                <tr><td>Total</td><td>100%*</td></tr>
+                            </tfoot>
+                        </table>
+                        <p class="note">*Rincian bobot penilaian tiap pertemuan mengikuti kolom Penilaian pada tabel RPS.</p>
+                    </article>
+
+                    <article class="profile-block full-width">
+                        <h3>Kontrak Perkuliahan</h3>
+                        <table class="profile-table kv">
+                            <tbody>
+                                <tr><th>Mata Kuliah</th><td>Ilmu Fikih</td></tr>
+                                <tr><th>Kode Mata Kuliah</th><td>HK122501</td></tr>
+                                <tr><th>Rumpun MK</th><td>Mata Kuliah Keprodian</td></tr>
+                                <tr><th>Bobot SKS</th><td>3 SKS</td></tr>
+                                <tr><th>Semester</th><td>II</td></tr>
+                                <tr><th>Dosen Pengembang RPS / Koordinator MK</th><td>Dr. Rahmawati, M.Ag</td></tr>
+                                <tr><th>Ketua Program Studi</th><td>Nirwana Halide, S.H., M.H</td></tr>
+                            </tbody>
+                        </table>
+                        <p>Perkuliahan dilaksanakan selama 16 pertemuan (termasuk UTS pada pertemuan ke-8 dan UAS pada pertemuan ke-16). Mahasiswa wajib mengikuti diskusi, mengumpulkan tugas tepat waktu, mengikuti praktik/simulasi ibadah yang diwajibkan, dan menjunjung tinggi etika akademik.</p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RPS ================= -->
+
+        <section id="page-rps" class="app-page" data-title="RPS">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">RPS</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">16 pertemuan</span>Rencana Pembelajaran Semester</h2>
+
+                <div class="rps-wrapper">
+
+                    <div class="timeline">
+
+                        <div class="timeline-item" data-week="1"><span class="week">1</span>Pengantar Ilmu Fikih</div>
+                        <div class="timeline-item" data-week="2"><span class="week">2</span>Sumber Hukum Islam</div>
+                        <div class="timeline-item" data-week="3"><span class="week">3</span>Kaidah Dasar dalam Fikih</div>
+                        <div class="timeline-item" data-week="4"><span class="week">4</span>Prinsip Kemudahan dalam Islam</div>
+                        <div class="timeline-item" data-week="5"><span class="week">5</span>Thaharah I</div>
+                        <div class="timeline-item" data-week="6"><span class="week">6</span>Thaharah II</div>
+                        <div class="timeline-item" data-week="7"><span class="week">7</span>Haid, Nifas &amp; Istihadhah</div>
+                        <div class="timeline-item exam" data-week="8"><span class="week">8</span>UTS</div>
+                        <div class="timeline-item" data-week="9"><span class="week">9</span>Shalat I</div>
+                        <div class="timeline-item" data-week="10"><span class="week">10</span>Shalat II</div>
+                        <div class="timeline-item" data-week="11"><span class="week">11</span>Zakat dan Infak</div>
+                        <div class="timeline-item" data-week="12"><span class="week">12</span>Puasa</div>
+                        <div class="timeline-item" data-week="13"><span class="week">13</span>Haji dan Umrah</div>
+                        <div class="timeline-item" data-week="14"><span class="week">14</span>Muamalah I (Jual Beli)</div>
+                        <div class="timeline-item" data-week="15"><span class="week">15</span>Muamalah II (Riba &amp; Ekonomi Syariah)</div>
+                        <div class="timeline-item exam" data-week="16"><span class="week">16</span>UAS</div>
+
+                    </div>
+
+                    <div class="rps-table">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Minggu</th>
+                                    <th>Materi</th>
+                                    <th>CPMK</th>
+                                    <th>Metode</th>
+                                    <th>Penilaian</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>1</td>
+                                    <td>Pengantar Ilmu Fikih</td>
+                                    <td>CPMK-1 — Menjelaskan pengertian fikih, perbedaan syariat-fikih-ushul fikih, ruang lingkup, tujuan &amp; kedudukan fikih</td>
+                                    <td>Ceramah interaktif, diskusi kelas</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Sumber Hukum Islam</td>
+                                    <td>CPMK-1 — Mengidentifikasi Al-Qur'an, As-Sunnah, Ijma', Qiyas &amp; sumber yang diperselisihkan (istihsan, maslahah mursalah, 'urf, sadd adz-dzari'ah, istishab)</td>
+                                    <td>Ceramah, tanya jawab, diskusi</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Kaidah Dasar dalam Fikih</td>
+                                    <td>CPMK-2 — Menjelaskan pengertian kaidah fikih, Al-Qawa'id al-Khams, kaidah al-umuru bi maqashidiha &amp; al-yaqin la yazulu bisy-syak</td>
+                                    <td>Diskusi kelompok</td>
+                                    <td>6%</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Prinsip Kemudahan dalam Islam</td>
+                                    <td>CPMK-2 — Menerapkan al-masyaqqah tajlibut taisir, adh-dhararu yuzal, al-'adah muhakkamah &amp; konsep rukhsah</td>
+                                    <td>Problem based learning, studi kasus</td>
+                                    <td>6%</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Thaharah I (Bersuci)</td>
+                                    <td>CPMK-3 — Menjelaskan pengertian thaharah, macam hadas &amp; jenis najis, serta cara menyucikan najis</td>
+                                    <td>Ceramah, diskusi</td>
+                                    <td>6%</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Thaharah II</td>
+                                    <td>CPMK-3 — Mempraktikkan rukun, syarat &amp; sunnah wudhu, hal pembatal wudhu, serta tata cara tayammum</td>
+                                    <td>Simulasi/praktikum wudhu &amp; tayammum</td>
+                                    <td>8%</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Haid, Nifas, dan Istihadhah</td>
+                                    <td>CPMK-3 — Membedakan haid, nifas &amp; istihadhah serta hukum ibadah bagi wanita yang mengalaminya</td>
+                                    <td>Ceramah, diskusi, resume materi</td>
+                                    <td>6%</td>
+                                </tr>
+                                <tr class="exam-row">
+                                    <td>8</td>
+                                    <td><strong>Ujian Tengah Semester</strong> — Materi Pertemuan 1-7</td>
+                                    <td>Evaluasi CPMK 1-3</td>
+                                    <td>UTS — tes tertulis individu</td>
+                                    <td>20%</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Shalat I (Dasar-Dasar Shalat)</td>
+                                    <td>CPMK-3 — Menjelaskan syarat wajib, syarat sah, rukun &amp; sunnah shalat serta hal yang membatalkannya</td>
+                                    <td>Ceramah, diskusi</td>
+                                    <td>6%</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Shalat II (Berjamaah &amp; Shalat Sunnah)</td>
+                                    <td>CPMK-3 — Menguraikan keutamaan shalat berjamaah, syarat imam-makmum, shalat rawatib, dhuha, tahajud, witir, id &amp; jenazah</td>
+                                    <td>Cooperative learning, tugas kelompok</td>
+                                    <td>6%</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>Zakat dan Infak</td>
+                                    <td>CPMK-4 — Menjelaskan syarat wajib zakat, zakat fitrah-mal &amp; delapan asnaf penerima zakat</td>
+                                    <td>Diskusi, presentasi kelompok</td>
+                                    <td>6%</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>Puasa</td>
+                                    <td>CPMK-4 — Menganalisis rukun, syarat &amp; pembatal puasa, qadha-kafarat, serta puasa bagi musafir &amp; orang sakit</td>
+                                    <td>Case method, diskusi kasus</td>
+                                    <td>6%</td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>Haji dan Umrah</td>
+                                    <td>CPMK-4 — Menjelaskan syarat wajib, rukun-wajib haji, larangan ihram &amp; tata cara manasik haji-umrah</td>
+                                    <td>Ceramah, diskusi</td>
+                                    <td>6%</td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>Muamalah I (Jual Beli)</td>
+                                    <td>CPMK-5 — Menjelaskan prinsip muamalah, rukun-syarat jual beli, jual beli sah-batal &amp; khiyar</td>
+                                    <td>Diskusi, analisis kasus jual beli</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>Muamalah II (Riba dan Ekonomi Syariah)</td>
+                                    <td>CPMK-5 — Mengevaluasi macam riba, sistem ekonomi &amp; perbankan syariah, serta kasus kredit bank, pinjol &amp; paylater</td>
+                                    <td>Project based learning, studi kasus</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr class="exam-row">
+                                    <td>16</td>
+                                    <td><strong>Ujian Akhir Semester</strong> — Materi Pertemuan 1-15</td>
+                                    <td>Evaluasi seluruh CPMK</td>
+                                    <td>UAS — tes tertulis individu</td>
+                                    <td>20%</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MATERI ================= -->
+
+        <section id="page-materi" class="app-page" data-title="Materi">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Materi</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">16 pertemuan</span>Materi Perkuliahan</h2>
+
+                <div class="materi-action">
+
+                    <input type="text" placeholder="Cari materi…" id="materi-search">
+
+                    <div class="filter">
+                        <button class="filter-btn active">Semua</button>
+                        <button class="filter-btn">Pengantar &amp; Sumber Hukum</button>
+                        <button class="filter-btn">Ibadah</button>
+                        <button class="filter-btn">Muamalah</button>
+                    </div>
+
+                </div>
+
+                <div class="materi-list">
+
+                    <article class="card materi-card" data-goto="pertemuan-1" tabindex="0" role="button" aria-label="Buka detail Pertemuan 1"><span class="tag">Pertemuan 1</span><h3>Pengantar Ilmu Fikih</h3><p>Pengertian fikih secara bahasa &amp; istilah, perbedaan syariat-fikih-ushul fikih, ruang lingkup fikih (ibadah, muamalah, munakahat, jinayah, siyasah), tujuan &amp; kedudukan fikih dalam kehidupan umat Islam.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-2" tabindex="0" role="button" aria-label="Buka detail Pertemuan 2"><span class="tag">Pertemuan 2</span><h3>Sumber Hukum Islam</h3><p>Al-Qur'an sebagai sumber hukum utama, As-Sunnah/Hadis, Ijma', Qiyas, serta sumber hukum yang diperselisihkan (istihsan, maslahah mursalah, 'urf, sadd adz-dzari'ah, istishab).</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-3" tabindex="0" role="button" aria-label="Buka detail Pertemuan 3"><span class="tag">Pertemuan 3</span><h3>Kaidah Dasar dalam Fikih</h3><p>Pengertian kaidah fikih, Al-Qawa'id al-Khams, kaidah al-umuru bi maqashidiha, al-yaqin la yazulu bisy-syak, dan penerapan kaidah dalam kehidupan sehari-hari.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-4" tabindex="0" role="button" aria-label="Buka detail Pertemuan 4"><span class="tag">Pertemuan 4</span><h3>Prinsip Kemudahan dalam Islam</h3><p>Al-masyaqqah tajlibut taisir, adh-dhararu yuzal, al-'adah muhakkamah, konsep rukhsah, dan studi kasus penerapan kaidah fikih.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-5" tabindex="0" role="button" aria-label="Buka detail Pertemuan 5"><span class="tag">Pertemuan 5</span><h3>Thaharah I (Bersuci)</h3><p>Pengertian thaharah, macam-macam hadas, jenis-jenis najis, cara menyucikan najis menurut fikih, dan hikmah bersuci.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-6" tabindex="0" role="button" aria-label="Buka detail Pertemuan 6"><span class="tag">Pertemuan 6</span><h3>Thaharah II</h3><p>Wudhu (rukun, syarat, sunnah), hal-hal yang membatalkan wudhu, tayammum (pengertian, syarat, tata cara), praktik wudhu &amp; tayammum, diskusi kesalahan umum dalam bersuci.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-7" tabindex="0" role="button" aria-label="Buka detail Pertemuan 7"><span class="tag">Pertemuan 7</span><h3>Haid, Nifas, dan Istihadhah</h3><p>Pengertian haid, nifas &amp; istihadhah, perbedaan ketiganya, hukum ibadah bagi wanita yang mengalaminya, cara bersuci setelahnya, dan permasalahan kontemporer terkait fikih wanita.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card exam" data-goto="ujian" tabindex="0" role="button" aria-label="Buka menu UTS/UAS"><span class="tag tag-exam">Pertemuan 8</span><h3>Ujian Tengah Semester (UTS)</h3><p>Evaluasi materi Pertemuan 1–7 dalam bentuk tes tertulis.</p><span class="open-hint">Buka UTS/UAS &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-9" tabindex="0" role="button" aria-label="Buka detail Pertemuan 9"><span class="tag">Pertemuan 9</span><h3>Shalat I (Dasar-Dasar Shalat)</h3><p>Pengertian &amp; kedudukan shalat, syarat wajib &amp; syarat sah shalat, rukun shalat, sunnah-sunnah shalat, dan hal-hal yang membatalkan shalat.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-10" tabindex="0" role="button" aria-label="Buka detail Pertemuan 10"><span class="tag">Pertemuan 10</span><h3>Shalat II (Berjamaah dan Shalat Sunnah)</h3><p>Keutamaan shalat berjamaah, syarat imam &amp; makmum, shalat sunnah rawatib, shalat dhuha, tahajud, witir, serta shalat Id &amp; shalat jenazah.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-11" tabindex="0" role="button" aria-label="Buka detail Pertemuan 11"><span class="tag">Pertemuan 11</span><h3>Zakat dan Infak</h3><p>Pengertian zakat, dalil kewajiban zakat, syarat wajib zakat, zakat fitrah &amp; zakat mal, delapan golongan penerima zakat (asnaf), serta pengertian infak &amp; sedekah.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-12" tabindex="0" role="button" aria-label="Buka detail Pertemuan 12"><span class="tag">Pertemuan 12</span><h3>Puasa</h3><p>Pengertian puasa, macam-macam puasa wajib &amp; sunnah, rukun &amp; syarat puasa, hal-hal yang membatalkan puasa, qadha &amp; kafarat, serta puasa bagi musafir &amp; orang sakit.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-13" tabindex="0" role="button" aria-label="Buka detail Pertemuan 13"><span class="tag">Pertemuan 13</span><h3>Haji dan Umrah</h3><p>Pengertian haji &amp; umrah, syarat wajib haji, rukun &amp; wajib haji, larangan ihram, tata cara pelaksanaan manasik haji &amp; umrah, serta hikmah ibadah haji.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-14" tabindex="0" role="button" aria-label="Buka detail Pertemuan 14"><span class="tag">Pertemuan 14</span><h3>Muamalah I (Jual Beli)</h3><p>Pengertian muamalah, prinsip-prinsip muamalah dalam Islam, rukun &amp; syarat jual beli, jual beli yang sah &amp; batal, khiyar, serta etika bisnis dalam Islam.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-15" tabindex="0" role="button" aria-label="Buka detail Pertemuan 15"><span class="tag">Pertemuan 15</span><h3>Muamalah II (Riba dan Ekonomi Syariah)</h3><p>Pengertian riba, macam-macam riba, dalil larangan riba, sistem ekonomi syariah, perbankan syariah, dan analisis kasus kredit bank, pinjaman online &amp; paylater menurut fikih muamalah.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card exam" data-goto="ujian" tabindex="0" role="button" aria-label="Buka menu UTS/UAS"><span class="tag tag-exam">Pertemuan 16</span><h3>Ujian Akhir Semester (UAS)</h3><p>Evaluasi materi Pertemuan 1–15 dalam bentuk tes tertulis.</p><span class="open-hint">Buka UTS/UAS &rarr;</span></article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DETAIL PERTEMUAN (dibuka dari kartu Materi) ================= -->
+
+        <section id="page-pertemuan" class="app-page" data-title="Pertemuan">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="materi">&larr; Materi</button>
+                <span class="page-crumb" id="pertemuan-crumb">Pertemuan</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow" id="pertemuan-eyebrow">Pertemuan</span><span id="pertemuan-title">Judul Pertemuan</span></h2>
+
+                <article class="profile-block full-width">
+                    <h3>Modul Ringkas</h3>
+                    <div id="pertemuan-modul"><!-- diisi otomatis oleh script.js --></div>
+                </article>
+
+                <h3 class="pertemuan-subheading">Video Pembelajaran</h3>
+                <div class="video-list pertemuan-video-list">
+
+                    <article class="card video-card" id="pertemuan-video-card" data-youtube="" tabindex="0" role="button" aria-label="Putar video pertemuan ini">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3 id="pertemuan-video-title">Video Pertemuan</h3>
+                        <p id="pertemuan-video-desc"></p>
+                    </article>
+
+                </div>
+
+                <h3 class="pertemuan-subheading">Studi Kasus</h3>
+                <article class="card pertemuan-case">
+                    <p id="pertemuan-case-text"></p>
+                </article>
+
+                <h3 class="pertemuan-subheading">Uji Formatif</h3>
+                <article class="profile-block full-width formatif-block" id="pertemuan-formatif-block">
+
+                    <h4 class="formatif-heading">A. Pilihan Ganda <span class="formatif-count">(10 soal)</span></h4>
+                    <div id="pertemuan-mcq-list" class="formatif-mcq-list"><!-- diisi otomatis oleh script.js --></div>
+
+                    <h4 class="formatif-heading">B. Soal Esai <span class="formatif-count">(5 soal)</span></h4>
+                    <div id="pertemuan-essay-list" class="formatif-essay-list"><!-- diisi otomatis oleh script.js --></div>
+
+                    <button type="button" id="pertemuan-formatif-submit">Kumpulkan Uji Formatif</button>
+                    <p class="formatif-result" id="pertemuan-formatif-result"></p>
+
+                    <div class="formatif-send-wa" id="formatif-send-wa" hidden>
+                        <p class="formatif-identity-note" id="formatif-identity-note"></p>
+                        <button type="button" id="formatif-edit-identity-btn" class="ghost-small">Ubah data</button>
+                        <button type="button" id="formatif-email-btn">Kirim jawaban Esai</button>
+                    </div>
+
+                    <p class="formatif-empty" id="pertemuan-formatif-empty" hidden>Uji formatif untuk pertemuan ini belum tersedia.</p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= VIDEO ================= -->
+
+        <section id="page-video" class="app-page" data-title="Video">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Video</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Tonton</span>Video Pembelajaran</h2>
+
+                <div class="video-filter">
+                    <button class="filter-btn active">Semua</button>
+                    <button class="filter-btn">Ibadah</button>
+                    <button class="filter-btn">Muamalah</button>
+                </div>
+
+                <div class="video-list">
+
+                    <!--
+                        Cara isi link YouTube:
+                        Ganti nilai data-youtube="" dengan ID atau URL video YouTube-mu, misal:
+                        data-youtube="dQw4w9WgXcQ"
+                        data-youtube="https://youtu.be/dQw4w9WgXcQ"
+                        data-youtube="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                        Kartu tanpa link akan menampilkan pesan "Video belum ditautkan" saat diklik.
+                        Judul di bawah sudah disesuaikan dengan RPS — sambungkan tiap link ke judul yang sesuai.
+                    -->
+
+                    <article class="card video-card" data-youtube="https://youtu.be/BHq3F9LnSXk?si=HL8HAo2_FpuxBwnW" data-week="1" tabindex="0" role="button" aria-label="Putar video: Pengantar Ilmu Fikih">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Pengantar Ilmu Fikih</h3>
+                        <p>Pertemuan 1 · Pengertian, ruang lingkup &amp; kedudukan fikih</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/BYqNgHvQIgI?si=C3AzCWGRDBMVzCbo" data-week="2" tabindex="0" role="button" aria-label="Putar video: Sumber Hukum Islam">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Sumber Hukum Islam</h3>
+                        <p>Pertemuan 2 · Al-Qur'an, As-Sunnah, Ijma' &amp; Qiyas</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/bTFEHSM2b_E?si=C1T6YzTz4h0uQF32" data-week="3" tabindex="0" role="button" aria-label="Putar video: Kaidah Dasar dalam Fikih">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Kaidah Dasar dalam Fikih</h3>
+                        <p>Pertemuan 3 · Al-Qawa'id al-Khams &amp; kaidah al-umuru bi maqashidiha</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/kDM2aPzkUQw?si=M4joRYej_MyQErp3" data-week="4" tabindex="0" role="button" aria-label="Putar video: Prinsip Kemudahan dalam Islam">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Prinsip Kemudahan dalam Islam</h3>
+                        <p>Pertemuan 4 · Al-masyaqqah tajlibut taisir &amp; konsep rukhsah</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube=https://youtu.be/rlXhYTd1Kyc?si=VpNm2kKl-M5KUScq"" data-week="5" tabindex="0" role="button" aria-label="Putar video: Thaharah I">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Thaharah I (Bersuci)</h3>
+                        <p>Pertemuan 5 · Hadas, najis &amp; cara menyucikannya</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/5AOFDvCvRhc?si=o0NyKugxQi6dMHdf" data-week="6" tabindex="0" role="button" aria-label="Putar video: Thaharah II">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Thaharah II</h3>
+                        <p>Pertemuan 6 · Praktik wudhu &amp; tayammum</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/7QaErNG3CSU?si=9QvBLih0PudcypL5" data-week="7" tabindex="0" role="button" aria-label="Putar video: Haid, Nifas, dan Istihadhah">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Haid, Nifas, dan Istihadhah</h3>
+                        <p>Pertemuan 7 · Hukum ibadah bagi wanita &amp; cara bersuci</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/LH4Te_KiILY?si=DIzjU1dx41Mc7eHO" data-week="9" tabindex="0" role="button" aria-label="Putar video: Shalat I">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Shalat I (Dasar-Dasar Shalat)</h3>
+                        <p>Pertemuan 9 · Syarat, rukun &amp; sunnah shalat</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/vRbAt0FHxRA?si=DevpbhcRuahttNy3" data-week="10" tabindex="0" role="button" aria-label="Putar video: Shalat II">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Shalat II (Berjamaah dan Shalat Sunnah)</h3>
+                        <p>Pertemuan 10 · Shalat berjamaah, rawatib, dhuha &amp; jenazah</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/JLbpPINCMGs?si=OthOToIc69fb17rV" data-week="11" tabindex="0" role="button" aria-label="Putar video: Zakat dan Infak">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Zakat dan Infak</h3>
+                        <p>Pertemuan 11 · Syarat zakat &amp; delapan asnaf</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/4VRmZ6D66NI?si=iyQ33QhXEUvHzHl1" data-week="12" tabindex="0" role="button" aria-label="Putar video: Puasa">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Puasa</h3>
+                        <p>Pertemuan 12 · Rukun, pembatal, qadha &amp; kafarat</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/8YpbiCmXtRI?si=QAgREUbGrLJdRkBr" data-week="13" tabindex="0" role="button" aria-label="Putar video: Haji dan Umrah">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Haji dan Umrah</h3>
+                        <p>Pertemuan 13 · Rukun, wajib haji &amp; manasik</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/l4Oz9EzHj-0?si=yYD_tK78UwTyiFKB" data-week="14" tabindex="0" role="button" aria-label="Putar video: Muamalah I (Jual Beli)">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Muamalah I (Jual Beli)</h3>
+                        <p>Pertemuan 14 · Rukun, syarat jual beli &amp; khiyar</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/9fSlPj2Kw_0?si=kRlvheQqGMz7iu6-" data-week="15" tabindex="0" role="button" aria-label="Putar video: Muamalah II (Riba dan Ekonomi Syariah)">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Muamalah II (Riba dan Ekonomi Syariah)</h3>
+                        <p>Pertemuan 15 · Riba, ekonomi syariah &amp; kasus kredit-paylater</p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STUDI KASUS ================= -->
+
+        <section id="page-kasus" class="app-page" data-title="Studi Kasus">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Studi Kasus</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Praktik</span>Studi Kasus</h2>
+
+                <div class="case-list">
+
+                    <article class="card"><h3>Penerapan Kaidah Fikih dalam Kehidupan Sehari-hari</h3><p>Pertemuan 4 · Prinsip kemudahan (masyaqqah, dharar, 'adah) pada persoalan kontemporer.</p></article>
+                    <article class="card"><h3>Kesalahan Umum dalam Bersuci</h3><p>Pertemuan 6 · Analisis praktik wudhu &amp; tayammum yang keliru di masyarakat.</p></article>
+                    <article class="card"><h3>Permasalahan Kontemporer Fikih Wanita</h3><p>Pertemuan 7 · Isu haid, nifas &amp; istihadhah dalam konteks kekinian.</p></article>
+                    <article class="card"><h3>Zakat Profesi &amp; Zakat Digital</h3><p>Pertemuan 11 · Penerapan syarat wajib zakat pada penghasilan modern.</p></article>
+                    <article class="card"><h3>Puasa bagi Musafir dan Orang Sakit</h3><p>Pertemuan 12 · Diskusi rukhsah, qadha &amp; kafarat.</p></article>
+                    <article class="card"><h3>Etika Bisnis dalam Jual Beli Online</h3><p>Pertemuan 14 · Rukun &amp; syarat jual beli, khiyar dalam transaksi digital.</p></article>
+                    <article class="card"><h3>Kredit Bank, Pinjaman Online &amp; Paylater</h3><p>Pertemuan 15 · Analisis riba &amp; kesesuaiannya dengan prinsip ekonomi syariah.</p></article>
+
+                </div>
+
+                <div class="case-workspace">
+
+                    <h3>Analisis Kasus</h3>
+
+                    <textarea placeholder="Tuliskan analisis Anda..."></textarea>
+
+                    <button type="button">Kirim Analisis</button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUIZ ================= -->
+
+        <section id="page-quiz" class="app-page" data-title="Quiz">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Quiz</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Uji pemahaman</span>Quiz Ilmu Fikih</h2>
+
+                <div class="quiz-progress">
+                    <div class="progress-bar"><span style="width:0%"></span></div>
+                    <small>Soal 1 dari 5</small>
+                </div>
+
+                <div class="quiz-container">
+
+                    <div class="card quiz-question">
+                        <h3>1. Berikut termasuk delapan golongan penerima zakat (asnaf), kecuali...</h3>
+                        <label><input type="radio" name="q1"> Fakir</label>
+                        <label><input type="radio" name="q1"> Amil</label>
+                        <label><input type="radio" name="q1"> Muzakki (orang yang wajib berzakat)</label>
+                        <label><input type="radio" name="q1"> Gharim</label>
+                    </div>
+
+                    <div class="card quiz-question">
+                        <h3>2. Kaidah "al-masyaqqah tajlibut taisir" termasuk salah satu prinsip...</h3>
+                        <label><input type="radio" name="q2"> Kemudahan dalam Islam</label>
+                        <label><input type="radio" name="q2"> Larangan riba</label>
+                        <label><input type="radio" name="q2"> Rukun shalat</label>
+                        <label><input type="radio" name="q2"> Syarat wajib haji</label>
+                    </div>
+
+                    <button type="button">Kumpulkan Jawaban</button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= UJIAN ================= -->
+
+        <section id="page-ujian" class="app-page" data-title="UTS/UAS">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">UTS/UAS</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Evaluasi</span>UTS &amp; UAS</h2>
+
+                <div class="exam-container">
+
+                    <article class="exam-card">
+                        <h3>UTS</h3>
+                        <p>Materi Pertemuan 1–7</p>
+                        <p>Bentuk: Tes tertulis individu · Bobot 20%</p>
+                        <p class="timer">Timer</p>
+                    </article>
+
+                    <article class="exam-card">
+                        <h3>UAS</h3>
+                        <p>Materi Pertemuan 1–15</p>
+                        <p>Bentuk: Tes tertulis individu, mencakup seluruh capaian pembelajaran · Bobot 20%</p>
+                        <p class="timer">Timer</p>
+                    </article>
+
+                </div>
+
+                <article class="profile-block full-width" style="margin-top:20px;">
+                    <h3>Rubrik Penilaian Essay UTS/UAS</h3>
+                    <table class="profile-table weighted">
+                        <colgroup>
+                            <col>
+                            <col style="width:90px">
+                        </colgroup>
+                        <thead>
+                            <tr><th>Aspek</th><th>Bobot</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Ketepatan Konsep</td><td>25%</td></tr>
+                            <tr><td>Kedalaman Analisis</td><td>30%</td></tr>
+                            <tr><td>Penggunaan Referensi</td><td>20%</td></tr>
+                            <tr><td>Argumentasi Akademik</td><td>15%</td></tr>
+                            <tr><td>Sistematika Penulisan</td><td>10%</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr><td>Total</td><td>100%</td></tr>
+                        </tfoot>
+                    </table>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= REFERENSI ================= -->
+
+        <section id="page-referensi" class="app-page" data-title="Referensi">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Referensi</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Bacaan</span>Referensi</h2>
+
+                <div class="reference-list">
+
+                    <article class="card"><span class="tag">Utama</span><p>Wahbah Az-Zuhaili. <em>Al-Fiqh al-Islami wa Adillatuhu</em>. Damascus: Dar al-Fikr.</p></article>
+                    <article class="card"><span class="tag">Utama</span><p>Abdul Wahhab Khallaf. <em>Ilmu Ushul Fiqh</em>. Kairo: Dar al-Qalam.</p></article>
+                    <article class="card"><span class="tag">Utama</span><p>Amir Syarifuddin. <em>Garis-Garis Besar Fiqh</em>. Jakarta: Kencana.</p></article>
+                    <article class="card"><span class="tag">Pendukung</span><p>Yusuf Al-Qaradawi. <em>Fiqh Zakat</em>. Beirut: Muassasah Risalah.</p></article>
+                    <article class="card"><span class="tag">Pendukung</span><p>Sayyid Sabiq. <em>Fiqh Sunnah</em>. Beirut: Dar al-Fikr.</p></article>
+                    <article class="card"><span class="tag">Pendukung</span><p>Mardani. <em>Hukum Islam: Pengantar Ilmu Hukum Islam di Indonesia</em>. Jakarta: RajaGrafindo.</p></article>
+                    <article class="card"><span class="tag">Pendukung</span><p>Tim DSN-MUI. <em>Himpunan Fatwa Ekonomi Syariah Kontemporer</em>.</p></article>
+                    <article class="card"><span class="tag">Pendukung</span><p>Ibn Hajar Al-Asqalani. <em>Fath al-Bari bi Syarh Sahih al-Bukhari</em>. Kairo: Dar al-Rayyan li al-Turath.</p></article>
+                    <article class="card"><span class="tag">Pendukung</span><p>Yahya ibn Syaraf Al-Nawawi. <em>Al-Majmu' Syarh al-Muhadzdzab</em>. Jeddah: Maktabah al-Irshad.</p></article>
+                    <article class="card"><span class="tag">Jurnal</span><p><em>Musawa: Journal for Women and Gender Studies in Islam</em>.</p></article>
+                    <article class="card"><span class="tag">Jurnal</span><p><em>Al-Jami'ah: Journal of Islamic Studies</em>.</p></article>
+                    <article class="card"><span class="tag">Jurnal</span><p><em>Islamic Law and Society</em>.</p></article>
+                    <article class="card"><span class="tag">Sumber Lain</span><p>Hasil-Hasil Bahtsul Masail Muktamar / Lembaga Bahtsul Masail Nahdlatul Ulama (LBM NU).</p></article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DOWNLOAD ================= -->
+
+        <section id="page-download" class="app-page" data-title="Download">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Download</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Berkas</span>Download Materi</h2>
+
+                <div class="download-list">
+
+                    <article class="card download-item"><span class="file-icon">⬇</span><div><h3>RPS Ilmu Fikih</h3><p>Rencana Pembelajaran Semester lengkap 16 pertemuan.</p></div><button type="button">Download</button></article>
+                    <article class="card download-item"><span class="file-icon">⬇</span><div><h3>Kontrak Perkuliahan</h3><p>Kesepakatan aturan &amp; tata tertib perkuliahan.</p></div><button type="button">Download</button></article>
+                    <article class="card download-item"><span class="file-icon">⬇</span><div><h3>Rubrik Penilaian Essay</h3><p>Rubrik penilaian UTS/UAS (ketepatan konsep, analisis, referensi, argumentasi, sistematika).</p></div><button type="button">Download</button></article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= KONTAK ================= -->
+
+        <section id="page-kontak" class="app-page" data-title="Kontak">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Kontak</span>
+            </div>
+
+            <div class="container kontak-grid">
+
+                <div class="contact-info">
+
+                    <h2><span class="eyebrow">Hubungi</span>Dosen Pengampu</h2>
+                    <h3>Dr. Rahmawati, M.Ag</h3>
+                    <p>Dosen Pengembang RPS &amp; Koordinator Mata Kuliah</p>
+                    <p>Ketua Program Studi: Nirwana Halide, S.H., M.H</p>
+                    <p>Program Studi Hukum Islam · Program Pascasarjana UIN Palopo</p>
+
+                </div>
+
+                <form id="kontak-form">
+                    <input type="text" id="kontak-nama" placeholder="Nama" required>
+                    <input type="text" id="kontak-nim" placeholder="NIM" required>
+                    <input type="text" id="kontak-subjek" placeholder="Subjek" required>
+                    <textarea id="kontak-pesan" placeholder="Pesan" required></textarea>
+                    <button type="submit">Kirim</button>
+                </form>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- Overlay backdrop untuk mobile menu -->
+    <div id="nav-backdrop"></div>
+
+    <!-- Modal Identitas Mahasiswa -->
+    <div id="identity-modal" class="identity-modal" hidden aria-hidden="true">
+        <div class="identity-modal-backdrop" data-close-identity></div>
+        <div class="identity-modal-inner" role="dialog" aria-modal="true" aria-label="Isi identitas mahasiswa">
+            <button type="button" class="identity-modal-close" data-close-identity aria-label="Tutup">&times;</button>
+            <h3>Identitas Mahasiswa</h3>
+            <p class="identity-modal-desc">Diisi sekali saja. Data ini dipakai untuk mengumpulkan Uji Formatif ke dosen pengampu via Email.</p>
+            <form id="identity-form">
+                <input type="text" id="identity-nim" placeholder="NIM" required>
+                <input type="text" id="identity-nama" placeholder="Nama Lengkap" required>
+                <input type="text" id="identity-kelas" placeholder="Kelas / Angkatan" required>
+                <button type="submit">Simpan &amp; Lanjutkan</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal player YouTube -->
+    <div id="video-modal" class="video-modal" hidden aria-hidden="true">
+        <div class="video-modal-backdrop" data-close-modal></div>
+        <div class="video-modal-inner" role="dialog" aria-modal="true" aria-label="Pemutar video">
+            <button type="button" class="video-modal-close" data-close-modal aria-label="Tutup video">&times;</button>
+            <h3 id="video-modal-title"></h3>
+            <div class="video-embed">
+                <iframe id="video-modal-frame"
+                        src=""
+                        title="Pemutar video YouTube"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="../shared/core.js"></script>
+    <script src="data.js"></script>
+</body>
+
+</html>

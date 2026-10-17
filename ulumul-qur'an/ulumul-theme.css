@@ -1,0 +1,26 @@
+:root {
+    --ink-900: #1f2f4a;
+    --ink-800: #26374f;
+    --ink-700: #2d3f57;
+    --ink-600: #384c66;
+    --gold-500: #ffffff;
+    --gold-400: #e5f0ff;
+    --gold-100: #f2f7ff;
+    --parchment: #ffffff;
+    --parchment-dim: #d5dfef;
+    --ivory: #f6f9ff;
+    --line: rgba(255, 255, 255, 0.2);
+    --line-strong: rgba(255, 255, 255, 0.4);
+    --shadow-deep: 0 30px 60px -25px rgba(0, 0, 0, 0.5);
+
+    --font-display: "Fraunces", "Iowan Old Style", serif;
+    --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "Space Mono", "SFMono-Regular", monospace;
+
+    --header-h: 76px;
+    --radius-l: 22px;
+    --radius-m: 14px;
+    --radius-s: 8px;
+
+    color-scheme: dark;
+}

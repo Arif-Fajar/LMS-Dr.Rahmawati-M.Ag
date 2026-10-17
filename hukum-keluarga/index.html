@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LMS Qawa'id Fiqhiyyah Hukum Keluarga — Dr. H. Firman Muhammad Arif, Lc., M.HI</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../shared/core.css">
+    <link rel="stylesheet" href="hukum-keluarga.css">
+<style>
+        .materi-pokok-list { display: flex; flex-direction: column; gap: 10px; margin: 10px 0 18px; }
+        .materi-pokok-item { padding: 14px 18px; }
+        .materi-pokok-item summary {
+            cursor: pointer;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.02rem;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .materi-pokok-item summary::-webkit-details-marker { display: none; }
+        .materi-pokok-item summary::after {
+            content: "+";
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            flex: none;
+            opacity: .7;
+            transition: transform .2s ease;
+        }
+        .materi-pokok-item[open] summary::after { content: "–"; }
+        .materi-pokok-detail {
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid var(--line);
+            font-size: .95rem;
+            line-height: 1.7;
+        }
+        .materi-pokok-detail h4 {
+            font-family: var(--font-display);
+            font-size: .98rem;
+            margin: 16px 0 6px;
+        }
+        .materi-pokok-detail h4:first-child { margin-top: 0; }
+        .materi-pokok-detail p { margin: 0 0 10px; }
+        .rangkuman-board {
+            margin-top: 14px;
+            padding: 14px 16px;
+            border-radius: var(--radius-s);
+            background: var(--parchment-dim, rgba(255,204,0,.08));
+            border: 1px solid var(--line-strong);
+        }
+        .rangkuman-board strong {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: .78rem;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            opacity: .8;
+        }
+        .rangkuman-board p { margin: 0; font-size: .93rem; line-height: 1.65; }
+        .materi-pokok-plain { margin: 0 0 8px; }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header id="site-header">
+
+        <div class="container">
+
+            <a href="#home" class="logo" data-page="home">
+                <h2>LMS Hukum Keluarga</h2>
+                <span>UIN Palopo</span>
+            </a>
+
+            <nav id="main-nav">
+
+                <ul>
+
+                    <li><a href="#home" data-page="home" class="nav-link active">Beranda</a></li>
+                    <li><a href="#profil" data-page="profil" class="nav-link">Profil</a></li>
+                    <li><a href="#rps" data-page="rps" class="nav-link">RPS</a></li>
+                    <li><a href="#materi" data-page="materi" class="nav-link">Materi</a></li>
+                    <li><a href="#video" data-page="video" class="nav-link">Video</a></li>
+                    <li><a href="#kasus" data-page="kasus" class="nav-link">Studi Kasus</a></li>
+                    <li><a href="#quiz" data-page="quiz" class="nav-link">Quiz</a></li>
+                    <li><a href="#ujian" data-page="ujian" class="nav-link">UTS/UAS</a></li>
+                    <li><a href="#referensi" data-page="referensi" class="nav-link">Referensi</a></li>
+                    <li><a href="#download" data-page="download" class="nav-link">Download</a></li>
+                    <li><a href="#kontak" data-page="kontak" class="nav-link">Kontak</a></li>
+
+                </ul>
+
+            </nav>
+
+            <div class="header-action">
+
+                <button id="theme-toggle" type="button" aria-label="Ganti tema">Theme</button>
+                <button id="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false">Menu</button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HOME / HERO (halaman dasar, selalu di belakang) ================= -->
+
+    <main id="page-home" class="app-page is-home is-active">
+
+        <section id="hero">
+
+            <div class="container">
+
+                <div class="hero-left">
+
+                    <div class="badge-container">
+                        <span>Program Pascasarjana</span>
+                    </div>
+
+                    <h1>Qawa'id Fiqhiyyah<br>Hukum Keluarga</h1>
+
+                    <p>
+                        Mata kuliah Qawa'id Fiqhiyyah Hukum Keluarga membahas konsep, teori, prinsip, dan penerapan kaidah-kaidah fikih dalam penyelesaian berbagai persoalan hukum keluarga Islam — mulai dari pra-perkawinan, perkawinan, perceraian, nafkah, khulu', hingga kewarisan, melalui pendekatan normatif, filosofis, historis, dan multidisipliner.
+                    </p>
+
+                    <div class="hero-button">
+                        <button type="button" data-goto="rps">Mulai Belajar</button>
+                        <button type="button" class="ghost" data-goto="rps">RPS</button>
+                        <button type="button" class="ghost" data-goto="materi">Materi</button>
+                        <button type="button" class="ghost" data-goto="video">Video</button>
+                        <button type="button" class="ghost" data-goto="quiz">Quiz</button>
+                    </div>
+
+                </div>
+
+                <div class="hero-right">
+
+                    <div class="hero-animation">
+                        <div class="edu-stage">
+                            <svg class="edu-star-field" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(160,160)">
+                                    <polygon points="0,-120 14,-40 90,-84 34,-14 120,0 34,14 90,84 14,40 0,120 -14,40 -90,84 -34,14 -120,0 -34,-14 -90,-84 -14,-40" />
+                                    <polygon points="0,-80 10,-26 60,-56 22,-9 80,0 22,9 60,56 10,26 0,80 -10,26 -60,56 -22,9 -80,0 -22,-9 -60,-56 -10,-26" opacity="0.6"/>
+                                    <circle r="140" opacity="0.3"/>
+                                    <circle r="100" opacity="0.25"/>
+                                </g>
+                            </svg>
+
+                            <div class="edu-glow"></div>
+
+                            <div class="edu-book">
+                                <div class="edu-crescent"></div>
+                                <div class="edu-spine"></div>
+                                <div class="edu-page edu-left">
+                                    <div class="edu-lines"><span></span><span></span><span></span><span></span></div>
+                                </div>
+                                <div class="edu-page edu-right">
+                                    <div class="edu-lines"><span></span><span></span><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-card">
+                        <strong>Progress Belajar</strong>
+                        <div class="progress-bar"><span id="home-progress-bar" style="width:0%"></span></div>
+                        <small id="home-progress-text">0 / 16 pertemuan selesai</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="faq">
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Sering ditanyakan</span>Pertanyaan Umum</h2>
+
+                <div class="faq-list">
+
+                    <details class="card faq-item">
+                        <summary>Berapa jumlah pertemuan mata kuliah ini?</summary>
+                        <p>Perkuliahan berlangsung 16 pertemuan, termasuk UTS pada pertemuan ke-8 dan UAS pada pertemuan ke-16.</p>
+                    </details>
+
+                    <details class="card faq-item">
+                        <summary>Bagaimana bobot penilaian akhir dihitung?</summary>
+                        <p>Penilaian terdiri dari Kehadiran &amp; Partisipasi 10%, Tugas Individu 10%, Makalah 10%, Presentasi 10%, Studi Kasus 15%, UTS 15%, Artikel Ilmiah 15%, dan UAS 15%.</p>
+                    </details>
+
+                    <details class="card faq-item">
+                        <summary>Siapa dosen pengampu mata kuliah ini?</summary>
+                        <p>Mata kuliah diampu oleh Dr. H. Firman Muhammad Arif, Lc., M.HI, dengan Koordinator RMK Prof. Dr. Muhemin, MA. &amp; Dr. Helmi Kamal, M.HI, di bawah Program Studi yang dipimpin Prof. Dr. Rahmawati, M.Ag.</p>
+                    </details>
+
+                    <details class="card faq-item">
+                        <summary>Apa metode pembelajaran yang digunakan?</summary>
+                        <p>Kombinasi small group discussion, role-play and simulation, discovery learning, self-directed learning, cooperative learning, collaborative learning, contextual learning, dan project based learning sesuai topik tiap pertemuan.</p>
+                    </details>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+
+            <div class="container">
+
+                <h3>LMS Qawa'id Fiqhiyyah Hukum Keluarga</h3>
+
+                <p>Program Studi Magister Hukum Keluarga Islam</p>
+                <p>Pascasarjana UIN Palopo</p>
+
+                <p>© 2026 UIN Palopo</p>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- ================= SUB-PAGES (overlay di atas Beranda) ================= -->
+
+    <div id="pages-root">
+
+        <!-- ================= PROFIL ================= -->
+
+        <section id="page-profil" class="app-page" data-title="Profil Mata Kuliah">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Profil</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Profil</span>Profil Mata Kuliah</h2>
+
+                <div class="profile-tables">
+
+                    <article class="profile-block full-width">
+                        <h3>Ringkasan Mata Kuliah</h3>
+                        <table class="profile-table kv">
+                            <tbody>
+                                <tr>
+                                    <th>Deskripsi</th>
+                                    <td>Mata kuliah Qawa'id Fiqhiyyah Hukum Keluarga membahas konsep, teori, prinsip, dan penerapan kaidah-kaidah fikih dalam penyelesaian berbagai persoalan hukum keluarga Islam yang meliputi pra-perkawinan, perkawinan, perceraian, nafkah, khulu', dan kewarisan. Kajian dilakukan melalui pendekatan normatif, filosofis, historis, dan multidisipliner dengan menekankan kemampuan analisis, evaluasi, dan argumentasi hukum berdasarkan qawa'id fiqhiyyah serta pengembangan solusi hukum keluarga kontemporer.</td>
+                                </tr>
+                                <tr>
+                                    <th>Bahan Kajian</th>
+                                    <td>Reformulasi Syariah, Hukum Islam &amp; Fikih · Reformulasi Fikih, Ushul Fikih &amp; Qawa'id Fiqhiyyah · Al-Qawa'id Al-Kulliyyah Al-Khams · Kaidah Fikih Pra-Pernikahan · Keabsahan Perkawinan · Larangan Perkawinan · Khiyar dalam Perkawinan · Mahar · Nafkah &amp; Qasm · Khulu' · Kewarisan · Analisis Fatwa &amp; Putusan Pengadilan Agama · Analisis Kasus Kontemporer Hukum Keluarga · Penyusunan Karya Ilmiah berbasis Qawa'id Fiqhiyyah.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="profile-block">
+                        <h3>CPMK</h3>
+                        <table class="profile-table">
+                            <colgroup>
+                                <col style="width:96px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr><th>Kode</th><th>Capaian Pembelajaran</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>CPMK 1</td><td>Menganalisis konsep, teori, sumber, dan fungsi qawa'id fiqhiyyah dalam pengembangan hukum keluarga Islam.</td></tr>
+                                <tr><td>CPMK 2</td><td>Mengevaluasi penerapan kaidah-kaidah fikih dalam persoalan perkawinan, perceraian, nafkah, khulu', dan kewarisan.</td></tr>
+                                <tr><td>CPMK 3</td><td>Merumuskan argumentasi hukum keluarga berdasarkan qawa'id fiqhiyyah terhadap kasus-kasus kontemporer hukum keluarga Islam.</td></tr>
+                                <tr><td>CPMK 4</td><td>Menyusun karya ilmiah berbasis kajian qawa'id fiqhiyyah hukum keluarga secara sistematis dan beretika akademik.</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="profile-block">
+                        <h3>CPL</h3>
+                        <table class="profile-table">
+                            <colgroup>
+                                <col style="width:88px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr><th>Kode</th><th>Capaian Pembelajaran Lulusan</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>CPL 1</td><td>Mampu menjalankan sikap kemandirian, profesional dalam tugas-tugas keprofesian di masyarakat dengan tetap menjunjung tinggi nilai dan etika.</td></tr>
+                                <tr><td>CPL 2</td><td>Mampu menganalisis teori, konsep dan gagasan secara logis, kritis, sistematis, kreatif dan inovatif dalam bidang hukum keluarga Islam dengan menjunjung tinggi etika akademik.</td></tr>
+                                <tr><td>CPL 3</td><td>Mampu mengevaluasi berbagai dasar hukum dalam memutuskan atau memberi solusi persoalan hukum keluarga dengan mengutamakan kepastian, keadilan dan kemanfaatan hukum bagi kepentingan umum.</td></tr>
+                                <tr><td>CPL 4</td><td>Mampu mengamati peta jalan penelitian bidang hukum keluarga dengan pendekatan multidisipliner yang inovatif serta berintegritas akademik.</td></tr>
+                                <tr><td>CPL 5</td><td>Mampu menalar argumentasi hukum keluarga untuk memecahkan problematika hukum melalui fatwa, putusan, dan opini hukum dengan mengutamakan keadilan dan kemaslahatan.</td></tr>
+                                <tr><td>CPL 6</td><td>Mampu menyajikan karya ilmiah hasil penelitian bidang hukum keluarga yang dipublikasikan pada jurnal nasional maupun internasional bereputasi.</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="profile-block">
+                        <h3>Metode Pembelajaran</h3>
+                        <table class="profile-table">
+                            <colgroup>
+                                <col style="width:56px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr><th>No</th><th>Metode</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>01</td><td>Small group discussion</td></tr>
+                                <tr><td>02</td><td>Role-play and simulation</td></tr>
+                                <tr><td>03</td><td>Discovery learning &amp; self-directed learning</td></tr>
+                                <tr><td>04</td><td>Cooperative &amp; collaborative learning</td></tr>
+                                <tr><td>05</td><td>Contextual learning &amp; case method</td></tr>
+                                <tr><td>06</td><td>Project based learning &amp; seminar kelas</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="profile-block">
+                        <h3>Komponen Penilaian</h3>
+                        <table class="profile-table weighted">
+                            <colgroup>
+                                <col>
+                                <col style="width:90px">
+                            </colgroup>
+                            <thead>
+                                <tr><th>Komponen</th><th>Bobot</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Kehadiran dan Partisipasi</td><td>10%</td></tr>
+                                <tr><td>Tugas Individu</td><td>10%</td></tr>
+                                <tr><td>Makalah</td><td>10%</td></tr>
+                                <tr><td>Presentasi</td><td>10%</td></tr>
+                                <tr><td>Studi Kasus</td><td>15%</td></tr>
+                                <tr><td>Ujian Tengah Semester (UTS)</td><td>15%</td></tr>
+                                <tr><td>Artikel Ilmiah</td><td>15%</td></tr>
+                                <tr><td>Ujian Akhir Semester (UAS)</td><td>15%</td></tr>
+                            </tbody>
+                            <tfoot>
+                                <tr><td>Total</td><td>100%</td></tr>
+                            </tfoot>
+                        </table>
+                    </article>
+
+                    <article class="profile-block full-width">
+                        <h3>Kontrak Perkuliahan</h3>
+                        <table class="profile-table kv">
+                            <tbody>
+                                <tr><th>Mata Kuliah</th><td>Qawa'id Fiqhiyyah Hukum Keluarga</td></tr>
+                                <tr><th>Rumpun MK</th><td>Keilmuan Prodi</td></tr>
+                                <tr><th>Bobot SKS</th><td>T = 2, P = 0</td></tr>
+                                <tr><th>Semester</th><td>6</td></tr>
+                                <tr><th>Dosen Pengembang RPS</th><td>Dr. H. Firman Muhammad Arif, Lc., M.HI</td></tr>
+                                <tr><th>Koordinator RMK</th><td>Prof. Dr. Muhemin, MA. &amp; Dr. Helmi Kamal, M.HI</td></tr>
+                                <tr><th>Kepala Program Studi</th><td>Prof. Dr. Rahmawati, M.Ag</td></tr>
+                            </tbody>
+                        </table>
+                        <p>Perkuliahan dilaksanakan selama 16 pertemuan (termasuk UTS pada pertemuan ke-8 dan UAS pada pertemuan ke-16). Mahasiswa wajib mengikuti diskusi, mengumpulkan tugas tepat waktu, dan menjunjung tinggi etika akademik.</p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RPS ================= -->
+
+        <section id="page-rps" class="app-page" data-title="RPS">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">RPS</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">16 pertemuan</span>Rencana Pembelajaran Semester</h2>
+
+                <div class="rps-wrapper">
+
+                    <div class="timeline">
+
+                        <div class="timeline-item" data-week="1"><span class="week">1</span>Syariah, Hukum Islam &amp; Fikih</div>
+                        <div class="timeline-item" data-week="2"><span class="week">2</span>Fikih, Ushul Fikih &amp; Qawa'id</div>
+                        <div class="timeline-item" data-week="3"><span class="week">3</span>Urgensi Qawa'id Fiqhiyyah</div>
+                        <div class="timeline-item" data-week="4"><span class="week">4</span>Qawa'id Kulliyyah (I)</div>
+                        <div class="timeline-item" data-week="5"><span class="week">5</span>Qawa'id Kulliyyah (II)</div>
+                        <div class="timeline-item" data-week="6"><span class="week">6</span>Kaidah Pra-Pernikahan</div>
+                        <div class="timeline-item" data-week="7"><span class="week">7</span>Kaidah Keabsahan Nikah</div>
+                        <div class="timeline-item exam" data-week="8"><span class="week">8</span>UTS</div>
+                        <div class="timeline-item" data-week="9"><span class="week">9</span>Kaidah Larangan Nikah</div>
+                        <div class="timeline-item" data-week="10"><span class="week">10</span>Kaidah Khiyar Nikah</div>
+                        <div class="timeline-item" data-week="11"><span class="week">11</span>Kaidah Mahar</div>
+                        <div class="timeline-item" data-week="12"><span class="week">12</span>Kaidah Nafkah &amp; Qasm</div>
+                        <div class="timeline-item" data-week="13"><span class="week">13</span>Kaidah Khulu'</div>
+                        <div class="timeline-item" data-week="14"><span class="week">14</span>Kaidah Kewarisan</div>
+                        <div class="timeline-item" data-week="15"><span class="week">15</span>Analisis Fatwa &amp; Putusan</div>
+                        <div class="timeline-item exam" data-week="16"><span class="week">16</span>UAS</div>
+
+                    </div>
+
+                    <div class="rps-table">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Minggu</th>
+                                    <th>Materi</th>
+                                    <th>Sub-CPMK</th>
+                                    <th>Metode</th>
+                                    <th>Bobot</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>1</td>
+                                    <td>Reformulasi Syariah, Hukum Islam dan Fikih</td>
+                                    <td>Mampu menjelaskan konsep syariah, hukum Islam, dan fikih dalam perspektif hukum keluarga Islam (C2,A3)</td>
+                                    <td>Kuliah interaktif, diskusi kelompok, studi literatur (TM 2x50')</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Reformulasi Fikih, Ushul Fikih dan Qawa'id Fiqhiyyah</td>
+                                    <td>Mampu menjelaskan hubungan fikih, ushul fikih dan qawa'id fiqhiyyah (C2,A3)</td>
+                                    <td>SCL, cooperative learning, presentasi (TM 2x50')</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Urgensi Qawa'id Fiqhiyyah dalam Hukum Keluarga</td>
+                                    <td>Mampu menganalisis fungsi dan urgensi qawa'id fiqhiyyah dalam hukum keluarga (C3,A3)</td>
+                                    <td>Diskusi kasus dan telaah jurnal (TM 2x50')</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Al-Qawa'id Al-Kulliyyah Al-Khams (1)</td>
+                                    <td>Mampu menganalisis kaidah al-umuru bi maqashidiha dan al-yaqinu la yuzalu bisy-syak (C4,A3)</td>
+                                    <td>Case based learning (TM 2x50')</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Al-Qawa'id Al-Kulliyyah Al-Khams (2)</td>
+                                    <td>Mampu menganalisis kaidah al-masyaqqah tajlibut taisir, ad-dhararu yuzal dan al-adah muhakkamah (C4,A3)</td>
+                                    <td>Discovery learning dan diskusi (TM 2x50')</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Kaidah Fikih Pra-Pernikahan</td>
+                                    <td>Mampu mengevaluasi kaidah fikih pada aspek pra-pernikahan (C5,A3)</td>
+                                    <td>Problem based learning (TM 2x50')</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Kaidah Fikih Keabsahan Perkawinan</td>
+                                    <td>Mampu mengevaluasi kaidah fikih tentang keabsahan perkawinan (C5,A3)</td>
+                                    <td>Case method (TM 2x50')</td>
+                                    <td>10%</td>
+                                </tr>
+                                <tr class="exam-row">
+                                    <td>8</td>
+                                    <td><strong>Ujian Tengah Semester</strong> — Materi Pertemuan 1-7</td>
+                                    <td>Evaluasi capaian Sub-CPMK 1–4</td>
+                                    <td>Tes tertulis dan presentasi</td>
+                                    <td>15%</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Kaidah Fikih Larangan Perkawinan</td>
+                                    <td>Mampu mengevaluasi kaidah fikih tentang larangan perkawinan (C5,A3)</td>
+                                    <td>Problem based learning (TM 2x50')</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Kaidah Fikih Khiyar dalam Perkawinan</td>
+                                    <td>Mampu mengevaluasi kaidah fikih mengenai khiyar dalam perkawinan (C5,A3)</td>
+                                    <td>Diskusi kasus (TM 2x50')</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>Kaidah Fikih Mahar</td>
+                                    <td>Mampu menganalisis kaidah fikih mengenai mahar (C4,A3)</td>
+                                    <td>Cooperative learning (TM 2x50')</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>Kaidah Fikih Nafkah dan Qasm</td>
+                                    <td>Mampu menganalisis kaidah fikih mengenai nafkah dan qasm (C4,A3)</td>
+                                    <td>Case based learning (TM 2x50')</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>Kaidah Fikih Khulu'</td>
+                                    <td>Mampu menganalisis kaidah fikih mengenai khulu' dan perceraian (C4,A3)</td>
+                                    <td>Problem based learning (TM 2x50')</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>Kaidah Fikih Kewarisan</td>
+                                    <td>Mampu mengevaluasi kaidah fikih dalam hukum kewarisan Islam (C5,A3)</td>
+                                    <td>Project based learning (TM 2x50')</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>Analisis Fatwa, Putusan dan Kasus Kontemporer Hukum Keluarga</td>
+                                    <td>Mampu menyusun analisis kasus hukum keluarga berbasis qawa'id fiqhiyyah dalam bentuk karya ilmiah (C6,A4,P5)</td>
+                                    <td>Project Based Learning, Seminar Kelas (TM 2x50')</td>
+                                    <td>10%</td>
+                                </tr>
+                                <tr class="exam-row">
+                                    <td>16</td>
+                                    <td><strong>Ujian Akhir Semester</strong> — Materi Pertemuan 9-15</td>
+                                    <td>Evaluasi seluruh capaian pembelajaran mata kuliah</td>
+                                    <td>Tes, Presentasi dan Penilaian Proyek</td>
+                                    <td>15%</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MATERI ================= -->
+
+        <section id="page-materi" class="app-page" data-title="Materi">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Materi</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">16 pertemuan</span>Materi Perkuliahan</h2>
+
+                <div class="materi-action">
+
+                    <input type="text" placeholder="Cari materi…" id="materi-search">
+
+                    <div class="filter">
+                        <button class="filter-btn active">Semua</button>
+                        <button class="filter-btn">Pengantar &amp; Teori</button>
+                        <button class="filter-btn">Kaidah Perkawinan</button>
+                        <button class="filter-btn">Studi Kasus</button>
+                    </div>
+
+                </div>
+
+                <div class="materi-list">
+
+                    <article class="card materi-card" data-goto="pertemuan-1" tabindex="0" role="button" aria-label="Buka detail Pertemuan 1"><span class="tag">Pertemuan 1</span><h3>Reformulasi Syariah, Hukum Islam dan Fikih</h3><p>Pengertian syariah, konsep hukum Islam (sumber: Al-Qur'an, As-Sunnah, Ijma', Qiyas), konsep fikih, serta perbedaan syariah dan fikih.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-2" tabindex="0" role="button" aria-label="Buka detail Pertemuan 2"><span class="tag">Pertemuan 2</span><h3>Reformulasi Fikih, Ushul Fikih dan Qawa'id Fiqhiyyah</h3><p>Konsep ushul fikih sebagai metodologi penggalian hukum, konsep qawa'id fiqhiyyah sebagai prinsip umum, dan fungsinya dalam istinbath hukum.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-3" tabindex="0" role="button" aria-label="Buka detail Pertemuan 3"><span class="tag">Pertemuan 3</span><h3>Urgensi Qawa'id Fiqhiyyah dalam Hukum Keluarga</h3><p>Kedudukan &amp; fungsi qawa'id fiqhiyyah dalam hukum keluarga, implementasinya dalam putusan pengadilan agama, dan sebagai metode penyelesaian masalah.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-4" tabindex="0" role="button" aria-label="Buka detail Pertemuan 4"><span class="tag">Pertemuan 4</span><h3>Al-Qawa'id Al-Kulliyyah Al-Khams (I)</h3><p>Kaidah al-umuru bi maqashidiha (segala perkara tergantung tujuannya) dan al-yaqinu la yuzalu bisy-syak (keyakinan tidak hilang karena keraguan); aplikasi pada akad nikah, status perkawinan &amp; penetapan nasab.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-5" tabindex="0" role="button" aria-label="Buka detail Pertemuan 5"><span class="tag">Pertemuan 5</span><h3>Al-Qawa'id Al-Kulliyyah Al-Khams (II)</h3><p>Kaidah al-masyaqqah tajlibut taisir (kesulitan mendatangkan kemudahan), ad-dhararu yuzal (kemudaratan dihilangkan), dan al-adah muhakkamah (adat menjadi dasar hukum).</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-6" tabindex="0" role="button" aria-label="Buka detail Pertemuan 6"><span class="tag">Pertemuan 6</span><h3>Kaidah Fikih Pra-Pernikahan</h3><p>Khitbah, peminangan, adat dalam peminangan, serta pertimbangan maslahat dan mafsadat sebelum pernikahan.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-7" tabindex="0" role="button" aria-label="Buka detail Pertemuan 7"><span class="tag">Pertemuan 7</span><h3>Kaidah Fikih Keabsahan Perkawinan</h3><p>Wali nikah, kafa'ah, ijab qabul, saksi nikah, dan pencatatan perkawinan sebagai syarat keabsahan akad.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card exam" data-goto="ujian" tabindex="0" role="button" aria-label="Buka menu UTS/UAS"><span class="tag tag-exam">Pertemuan 8</span><h3>Ujian Tengah Semester (UTS)</h3><p>Evaluasi materi Pertemuan 1–7 dalam bentuk tes tertulis dan presentasi.</p><span class="open-hint">Buka UTS/UAS &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-9" tabindex="0" role="button" aria-label="Buka detail Pertemuan 9"><span class="tag">Pertemuan 9</span><h3>Kaidah Fikih Larangan Perkawinan</h3><p>Mahram nasab, mahram mushaharah, mahram radha'ah, dan analisis hukum perkawinan yang terlarang.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-10" tabindex="0" role="button" aria-label="Buka detail Pertemuan 10"><span class="tag">Pertemuan 10</span><h3>Kaidah Fikih Khiyar dalam Perkawinan</h3><p>Konsep khiyar, cacat dalam perkawinan, dan hak pembatalan perkawinan.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-11" tabindex="0" role="button" aria-label="Buka detail Pertemuan 11"><span class="tag">Pertemuan 11</span><h3>Kaidah Fikih Mahar</h3><p>Konsep mahar, jenis-jenis mahar, dan kedudukan mahar dalam hukum positif Indonesia.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-12" tabindex="0" role="button" aria-label="Buka detail Pertemuan 12"><span class="tag">Pertemuan 12</span><h3>Kaidah Fikih Nafkah dan Qasm</h3><p>Hak dan kewajiban suami istri, nafkah lahir, nafkah batin, dan pembagian giliran (qasm).</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-13" tabindex="0" role="button" aria-label="Buka detail Pertemuan 13"><span class="tag">Pertemuan 13</span><h3>Kaidah Fikih Khulu'</h3><p>Pengertian khulu', dasar hukum, dan mekanisme khulu' dalam praktik hukum Indonesia.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-14" tabindex="0" role="button" aria-label="Buka detail Pertemuan 14"><span class="tag">Pertemuan 14</span><h3>Kaidah Fikih Kewarisan</h3><p>Prinsip kewarisan Islam, asas keadilan dalam waris, dan analisis kasus kewarisan kontemporer.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-15" tabindex="0" role="button" aria-label="Buka detail Pertemuan 15"><span class="tag">Pertemuan 15</span><h3>Analisis Fatwa dan Putusan Pengadilan Agama</h3><p>Analisis fatwa, analisis putusan pengadilan agama, analisis kasus kontemporer, dan penyusunan artikel ilmiah berbasis qawa'id fiqhiyyah.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card exam" data-goto="ujian" tabindex="0" role="button" aria-label="Buka menu UTS/UAS"><span class="tag tag-exam">Pertemuan 16</span><h3>Ujian Akhir Semester (UAS)</h3><p>Evaluasi seluruh capaian pembelajaran mata kuliah melalui tes, presentasi, dan penilaian proyek.</p><span class="open-hint">Buka UTS/UAS &rarr;</span></article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DETAIL PERTEMUAN (dibuka dari kartu Materi) ================= -->
+
+        <section id="page-pertemuan" class="app-page" data-title="Pertemuan">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="materi">&larr; Materi</button>
+                <span class="page-crumb" id="pertemuan-crumb">Pertemuan</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow" id="pertemuan-eyebrow">Pertemuan</span><span id="pertemuan-title">Judul Pertemuan</span></h2>
+
+                <article class="profile-block full-width">
+                    <h3>Modul Ringkas</h3>
+                    <div id="pertemuan-modul"><!-- diisi otomatis oleh script.js --></div>
+                </article>
+
+                <h3 class="pertemuan-subheading">Video Pembelajaran</h3>
+                <div class="video-list pertemuan-video-list">
+
+                    <article class="card video-card" id="pertemuan-video-card" data-youtube="" tabindex="0" role="button" aria-label="Putar video pertemuan ini">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3 id="pertemuan-video-title">Video Pertemuan</h3>
+                        <p id="pertemuan-video-desc"></p>
+                    </article>
+
+                </div>
+
+                <h3 class="pertemuan-subheading">Studi Kasus</h3>
+                <article class="card pertemuan-case">
+                    <p id="pertemuan-case-text"></p>
+                </article>
+
+                <h3 class="pertemuan-subheading">Uji Formatif</h3>
+                <article class="profile-block full-width formatif-block" id="pertemuan-formatif-block">
+
+                    <h4 class="formatif-heading">A. Pilihan Ganda <span class="formatif-count">(10 soal)</span></h4>
+                    <div id="pertemuan-mcq-list" class="formatif-mcq-list"><!-- diisi otomatis oleh script.js --></div>
+
+                    <h4 class="formatif-heading">B. Soal Esai <span class="formatif-count">(5 soal)</span></h4>
+                    <div id="pertemuan-essay-list" class="formatif-essay-list"><!-- diisi otomatis oleh script.js --></div>
+
+                    <button type="button" id="pertemuan-formatif-submit">Kumpulkan Uji Formatif</button>
+                    <p class="formatif-result" id="pertemuan-formatif-result"></p>
+
+                    <div class="formatif-send-wa" id="formatif-send-wa" hidden>
+                        <p class="formatif-identity-note" id="formatif-identity-note"></p>
+                        <button type="button" id="formatif-edit-identity-btn" class="ghost-small">Ubah data</button>
+                        <button type="button" id="formatif-email-btn">Kirim jawaban Esai</button>
+                    </div>
+
+                    <p class="formatif-empty" id="pertemuan-formatif-empty" hidden>Uji formatif untuk pertemuan ini belum tersedia.</p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= VIDEO ================= -->
+
+        <section id="page-video" class="app-page" data-title="Video">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Video</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Tonton</span>Video Pembelajaran</h2>
+
+                <div class="video-filter">
+                    <button class="filter-btn active">Semua</button>
+                    <button class="filter-btn">Teori Dasar</button>
+                    <button class="filter-btn">Studi Kasus</button>
+                </div>
+
+                <div class="video-list">
+
+                    <!--
+                        Cara isi link YouTube:
+                        Ganti nilai data-youtube="" dengan ID atau URL video YouTube-mu, misal:
+                        data-youtube="dQw4w9WgXcQ"
+                        data-youtube="https://youtu.be/dQw4w9WgXcQ"
+                        data-youtube="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                        Kartu tanpa link akan menampilkan pesan "Video belum ditautkan" saat diklik.
+                        Judul di bawah sudah disesuaikan dengan RPS — tinggal sambungkan tiap link ke judul yang sesuai.
+                    -->
+
+                    <article class="card video-card" data-youtube="https://youtu.be/6Cr2cqAEcSE?si=JV9LabaRM9TWTj8d" data-week="1" tabindex="0" role="button" aria-label="Putar video: Reformulasi Syariah, Hukum Islam dan Fikih">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Reformulasi Syariah, Hukum Islam dan Fikih</h3>
+                        <p>Pertemuan 1 · Pengertian syariah, hukum Islam &amp; fikih</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/54tZbzVh42U?si=KKmSfoXhVp__EYD9" data-week="2" tabindex="0" role="button" aria-label="Putar video: Reformulasi Fikih, Ushul Fikih dan Qawa'id Fiqhiyyah">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Reformulasi Fikih, Ushul Fikih dan Qawa'id Fiqhiyyah</h3>
+                        <p>Pertemuan 2 · Hubungan fikih, ushul fikih &amp; qawa'id fiqhiyyah</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/zvwgP4wAEvs?si=TzK4iJ0YwX8l4DF5" data-week="3" tabindex="0" role="button" aria-label="Putar video: Urgensi Qawa'id Fiqhiyyah dalam Hukum Keluarga">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Urgensi Qawa'id Fiqhiyyah dalam Hukum Keluarga</h3>
+                        <p>Pertemuan 3 · Kedudukan &amp; fungsi qawa'id fiqhiyyah</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/I0P4W6Ys3Yg?si=BjNsUsSq6EPmMimw" data-week="4" tabindex="0" role="button" aria-label="Putar video: Al-Qawa'id Al-Kulliyyah Al-Khams (I)">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Al-Qawa'id Al-Kulliyyah Al-Khams (I)</h3>
+                        <p>Pertemuan 4 · Al-umuru bi maqashidiha &amp; al-yaqinu la yuzalu bisy-syak</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/Dg1v-_R8HSI?si=jzG2qm34NBlQYd_k" data-week="5" tabindex="0" role="button" aria-label="Putar video: Al-Qawa'id Al-Kulliyyah Al-Khams (II)">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Al-Qawa'id Al-Kulliyyah Al-Khams (II)</h3>
+                        <p>Pertemuan 5 · Al-masyaqqah tajlibut taisir, ad-dhararu yuzal &amp; al-adah muhakkamah</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/Bt7amihv150?si=IUyZbJwJLFvmC0O8" data-week="6" tabindex="0" role="button" aria-label="Putar video: Kaidah Fikih Pra-Pernikahan">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Kaidah Fikih Pra-Pernikahan</h3>
+                        <p>Pertemuan 6 · Khitbah, peminangan &amp; pertimbangan maslahat-mafsadat</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/DkDlAazCYhg?si=BT2tzt74bTY4myQQ" data-week="7" tabindex="0" role="button" aria-label="Putar video: Kaidah Fikih Keabsahan Perkawinan">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Kaidah Fikih Keabsahan Perkawinan</h3>
+                        <p>Pertemuan 7 · Wali nikah, kafa'ah, ijab qabul &amp; saksi nikah</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/8f1kBW45lVk?si=esKng4MPF26JaLqN" data-week="9" tabindex="0" role="button" aria-label="Putar video: Kaidah Fikih Larangan Perkawinan">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Kaidah Fikih Larangan Perkawinan</h3>
+                        <p>Pertemuan 9 · Mahram nasab, mushaharah &amp; radha'ah</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/VFqj23b_WTU?si=qD1u7pocHXZT_l7X" data-week="10" tabindex="0" role="button" aria-label="Putar video: Kaidah Fikih Khiyar dalam Perkawinan">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Kaidah Fikih Khiyar dalam Perkawinan</h3>
+                        <p>Pertemuan 10 · Cacat perkawinan &amp; hak pembatalan</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/AGu0mjj2jh8?si=vP09EjVIRXGQU1gy" data-week="11" tabindex="0" role="button" aria-label="Putar video: Kaidah Fikih Mahar">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Kaidah Fikih Mahar</h3>
+                        <p>Pertemuan 11 · Konsep &amp; jenis mahar dalam hukum positif Indonesia</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/8H7p5SAkHdc?si=6tOUSdj-2t1hp4fd" data-week="12" tabindex="0" role="button" aria-label="Putar video: Kaidah Fikih Nafkah dan Qasm">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Kaidah Fikih Nafkah dan Qasm</h3>
+                        <p>Pertemuan 12 · Nafkah lahir, batin &amp; pembagian giliran</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/LBNE7zkTwiE?si=vT5z5Yy-Itb7V9uL" data-week="13" tabindex="0" role="button" aria-label="Putar video: Kaidah Fikih Khulu'">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Kaidah Fikih Khulu'</h3>
+                        <p>Pertemuan 13 · Pengertian, dasar hukum &amp; mekanisme khulu'</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/nRaoMkLZiXg?si=6ySNRvAqN9V16ynX" data-week="14" tabindex="0" role="button" aria-label="Putar video: Kaidah Fikih Kewarisan">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Kaidah Fikih Kewarisan</h3>
+                        <p>Pertemuan 14 · Prinsip &amp; asas keadilan dalam waris</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/-3Sj0ma5M3E?si=-KR4mEAqPQG4X5pf" data-week="15" tabindex="0" role="button" aria-label="Putar video: Analisis Fatwa dan Putusan Pengadilan Agama">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Analisis Fatwa dan Putusan Pengadilan Agama</h3>
+                        <p>Pertemuan 15 · Analisis fatwa, putusan &amp; kasus kontemporer</p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STUDI KASUS ================= -->
+
+        <section id="page-kasus" class="app-page" data-title="Studi Kasus">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Studi Kasus</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Praktik</span>Studi Kasus</h2>
+
+                <div class="case-list">
+
+                    <article class="card"><h3>Dispensasi Pernikahan di Pengadilan Agama</h3><p>Pertemuan 6-7 · Tinjauan maqashid syariah atas putusan hakim terhadap dispensasi pernikahan (studi kasus Pengadilan Agama Belopa).</p></article>
+                    <article class="card"><h3>Perkawinan Terlarang: Mahram Nasab, Mushaharah &amp; Radha'ah</h3><p>Pertemuan 9 · Analisis hukum atas perkawinan yang termasuk kategori larangan nikah.</p></article>
+                    <article class="card"><h3>Cacat Perkawinan dan Hak Khiyar</h3><p>Pertemuan 10 · Penerapan hak pembatalan perkawinan akibat cacat yang ditemukan setelah akad.</p></article>
+                    <article class="card"><h3>Nafkah dan Qasm dalam Rumah Tangga</h3><p>Pertemuan 12 · Analisis hak dan kewajiban suami istri atas nafkah lahir, batin, dan pembagian giliran.</p></article>
+                    <article class="card"><h3>Khulu' dalam Praktik Pengadilan Agama</h3><p>Pertemuan 13 · Mekanisme khulu' dan penerapannya dalam hukum keluarga Indonesia.</p></article>
+                    <article class="card"><h3>Pembagian Waris Kontemporer</h3><p>Pertemuan 14 · Analisis kasus kewarisan dengan prinsip keadilan dalam hukum waris Islam.</p></article>
+                    <article class="card"><h3>Analisis Fatwa dan Putusan Kontemporer Hukum Keluarga</h3><p>Pertemuan 15 · Penyusunan artikel ilmiah berbasis qawa'id fiqhiyyah atas fatwa dan putusan pengadilan agama.</p></article>
+
+                </div>
+
+                <div class="case-workspace">
+
+                    <h3>Analisis Kasus</h3>
+
+                    <textarea placeholder="Tuliskan analisis Anda..."></textarea>
+
+                    <button type="button">Kirim Analisis</button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUIZ ================= -->
+
+        <section id="page-quiz" class="app-page" data-title="Quiz">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Quiz</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Uji pemahaman</span>Quiz Qawa'id Fiqhiyyah Hukum Keluarga</h2>
+
+                <div class="quiz-progress">
+                    <div class="progress-bar"><span style="width:0%"></span></div>
+                    <small>Soal 1 dari 5</small>
+                </div>
+
+                <div class="quiz-container">
+
+                    <div class="card quiz-question">
+                        <h3>1. Kaidah "al-masyaqqah tajlibut taisir" termasuk salah satu dari lima kaidah fikih universal (al-qawa'id al-kulliyyah al-khams) yang bermakna...</h3>
+                        <label><input type="radio" name="q1"> Segala perkara tergantung pada tujuannya</label>
+                        <label><input type="radio" name="q1"> Kesulitan mendatangkan kemudahan</label>
+                        <label><input type="radio" name="q1"> Keyakinan tidak hilang karena keraguan</label>
+                        <label><input type="radio" name="q1"> Adat kebiasaan dapat menjadi dasar hukum</label>
+                    </div>
+
+                    <div class="card quiz-question">
+                        <h3>2. Mahram yang timbul karena hubungan pernikahan (misalnya ibu mertua) termasuk kategori...</h3>
+                        <label><input type="radio" name="q2"> Mahram nasab</label>
+                        <label><input type="radio" name="q2"> Mahram mushaharah</label>
+                        <label><input type="radio" name="q2"> Mahram radha'ah</label>
+                        <label><input type="radio" name="q2"> Mahram sementara</label>
+                    </div>
+
+                    <button type="button">Kumpulkan Jawaban</button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= UJIAN ================= -->
+
+        <section id="page-ujian" class="app-page" data-title="UTS/UAS">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">UTS/UAS</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Evaluasi</span>UTS &amp; UAS</h2>
+
+                <div class="exam-container">
+
+                    <article class="exam-card">
+                        <h3>UTS</h3>
+                        <p>Materi Pertemuan 1–7</p>
+                        <p>Bentuk: Tes tertulis dan presentasi · Bobot 15%</p>
+                        <p class="timer">Timer</p>
+                    </article>
+
+                    <article class="exam-card">
+                        <h3>UAS</h3>
+                        <p>Materi Pertemuan 9–15</p>
+                        <p>Bentuk: Tes, presentasi dan penilaian proyek · Bobot 15%</p>
+                        <p class="timer">Timer</p>
+                    </article>
+
+                </div>
+
+                <article class="profile-block full-width" style="margin-top:20px;">
+                    <h3>Komponen Penilaian Keseluruhan</h3>
+                    <table class="profile-table weighted">
+                        <colgroup>
+                            <col>
+                            <col style="width:90px">
+                        </colgroup>
+                        <thead>
+                            <tr><th>Komponen</th><th>Bobot</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Kehadiran dan Partisipasi</td><td>10%</td></tr>
+                            <tr><td>Tugas Individu</td><td>10%</td></tr>
+                            <tr><td>Makalah</td><td>10%</td></tr>
+                            <tr><td>Presentasi</td><td>10%</td></tr>
+                            <tr><td>Studi Kasus</td><td>15%</td></tr>
+                            <tr><td>UTS</td><td>15%</td></tr>
+                            <tr><td>Artikel Ilmiah</td><td>15%</td></tr>
+                            <tr><td>UAS</td><td>15%</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr><td>Total</td><td>100%</td></tr>
+                        </tfoot>
+                    </table>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= REFERENSI ================= -->
+
+        <section id="page-referensi" class="app-page" data-title="Referensi">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Referensi</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Bacaan</span>Referensi</h2>
+
+                <div class="reference-list">
+
+                    <article class="card"><span class="tag">Pendukung</span><p>Darmawati, D., &amp; Arsyad, W. (2024). Pengembangan putusan hakim terhadap dispensasi pernikahan di Pengadilan Agama Belopa (Tinjauan Maqāṣid Syarī'ah). <em>BUSTANUL FUQAHA: Jurnal Bidang Hukum Islam</em>, 5(3), 514–543.</p></article>
+
+                </div>
+
+                <p class="note" style="margin-top:16px;">Daftar referensi utama pada RPS masih kosong — dapat dilengkapi menyusul oleh dosen pengampu.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DOWNLOAD ================= -->
+
+        <section id="page-download" class="app-page" data-title="Download">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Download</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Berkas</span>Download Materi</h2>
+
+                <div class="download-list">
+
+                    <article class="card download-item"><span class="file-icon">⬇</span><div><h3>RPS Qawa'id Fiqhiyyah Hukum Keluarga</h3><p>Rencana Pembelajaran Semester lengkap 16 pertemuan.</p></div><button type="button">Download</button></article>
+                    <article class="card download-item"><span class="file-icon">⬇</span><div><h3>Modul Pembelajaran</h3><p>Modul lengkap 14 Kegiatan Belajar (KB 1–15) beserta latihan &amp; tugas per pertemuan.</p></div><button type="button">Download</button></article>
+                    <article class="card download-item"><span class="file-icon">⬇</span><div><h3>Peta Kompetensi &amp; Evaluasi Pembelajaran</h3><p>Ringkasan capaian pembelajaran per Kegiatan Belajar dan komponen penilaian mata kuliah.</p></div><button type="button">Download</button></article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= KONTAK ================= -->
+
+        <section id="page-kontak" class="app-page" data-title="Kontak">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Kontak</span>
+            </div>
+
+            <div class="container kontak-grid">
+
+                <div class="contact-info">
+
+                    <h2><span class="eyebrow">Hubungi</span>Dosen Pengampu</h2>
+                    <h3>Prof. Dr.Rahmawati, M.Ag</h3>
+                    <p>Dosen Pengampu &amp; Pengembang RPS</p>
+                    <p>Koordinator RMK: Prof. Dr. Muhemin, MA. &amp; Dr. Helmi Kamal, M.HI</p>
+                    <p>Program Studi Magister Hukum Keluarga Islam · Pascasarjana UIN Palopo</p>
+
+                </div>
+
+                <form id="kontak-form">
+                    <input type="text" id="kontak-nama" placeholder="Nama" required>
+                    <input type="text" id="kontak-nim" placeholder="NIM" required>
+                    <input type="text" id="kontak-subjek" placeholder="Subjek" required>
+                    <textarea id="kontak-pesan" placeholder="Pesan" required></textarea>
+                    <button type="submit">Kirim</button>
+                </form>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- Overlay backdrop untuk mobile menu -->
+    <div id="nav-backdrop"></div>
+
+    <!-- Modal Identitas Mahasiswa -->
+    <div id="identity-modal" class="identity-modal" hidden aria-hidden="true">
+        <div class="identity-modal-backdrop" data-close-identity></div>
+        <div class="identity-modal-inner" role="dialog" aria-modal="true" aria-label="Isi identitas mahasiswa">
+            <button type="button" class="identity-modal-close" data-close-identity aria-label="Tutup">&times;</button>
+            <h3>Identitas Mahasiswa</h3>
+            <p class="identity-modal-desc">Diisi sekali saja. Data ini dipakai untuk mengumpulkan Uji Formatif ke dosen pengampu via Email.</p>
+            <form id="identity-form">
+                <input type="text" id="identity-nim" placeholder="NIM" required>
+                <input type="text" id="identity-nama" placeholder="Nama Lengkap" required>
+                <input type="text" id="identity-kelas" placeholder="Kelas / Angkatan" required>
+                <button type="submit">Simpan &amp; Lanjutkan</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal player YouTube -->
+    <div id="video-modal" class="video-modal" hidden aria-hidden="true">
+        <div class="video-modal-backdrop" data-close-modal></div>
+        <div class="video-modal-inner" role="dialog" aria-modal="true" aria-label="Pemutar video">
+            <button type="button" class="video-modal-close" data-close-modal aria-label="Tutup video">&times;</button>
+            <h3 id="video-modal-title"></h3>
+            <div class="video-embed">
+                <iframe id="video-modal-frame"
+                        src=""
+                        title="Pemutar video YouTube"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="../shared/core.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LMS Fikih Munakahat — Prodi Hukum Keluarga UIN Palopo</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS (stylesheet khusus mata kuliah menyusul) -->
+    <link rel="stylesheet" href="../shared/core.css">
+    <link rel="stylesheet" href="fiqih-munaqahat.css">
+<style>
+        .materi-pokok-list { display: flex; flex-direction: column; gap: 10px; margin: 10px 0 18px; }
+        .materi-pokok-item { padding: 14px 18px; }
+        .materi-pokok-item summary {
+            cursor: pointer;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.02rem;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .materi-pokok-item summary::-webkit-details-marker { display: none; }
+        .materi-pokok-item summary::after {
+            content: "+";
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            flex: none;
+            opacity: .7;
+            transition: transform .2s ease;
+        }
+        .materi-pokok-item[open] summary::after { content: "–"; }
+        .materi-pokok-detail {
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid var(--line);
+            font-size: .95rem;
+            line-height: 1.7;
+        }
+        .materi-pokok-detail h4 {
+            font-family: var(--font-display);
+            font-size: .98rem;
+            margin: 16px 0 6px;
+        }
+        .materi-pokok-detail h4:first-child { margin-top: 0; }
+        .materi-pokok-detail p { margin: 0 0 10px; }
+        .rangkuman-board {
+            margin-top: 14px;
+            padding: 14px 16px;
+            border-radius: var(--radius-s);
+            background: var(--parchment-dim, rgba(255,204,0,.08));
+            border: 1px solid var(--line-strong);
+        }
+        .rangkuman-board strong {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: .78rem;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            opacity: .8;
+        }
+        .rangkuman-board p { margin: 0; font-size: .93rem; line-height: 1.65; }
+        .materi-pokok-plain { margin: 0 0 8px; }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header id="site-header">
+
+        <div class="container">
+
+            <a href="#home" class="logo" data-page="home">
+                <h2>LMS Fikih Munakahat</h2>
+                <span>UIN Palopo</span>
+            </a>
+
+            <nav id="main-nav">
+
+                <ul>
+
+                    <li><a href="#home" data-page="home" class="nav-link active">Beranda</a></li>
+                    <li><a href="#profil" data-page="profil" class="nav-link">Profil</a></li>
+                    <li><a href="#rps" data-page="rps" class="nav-link">RPS</a></li>
+                    <li><a href="#materi" data-page="materi" class="nav-link">Materi</a></li>
+                    <li><a href="#video" data-page="video" class="nav-link">Video</a></li>
+                    <li><a href="#kasus" data-page="kasus" class="nav-link">Studi Kasus</a></li>
+                    <li><a href="#quiz" data-page="quiz" class="nav-link">Quiz</a></li>
+                    <li><a href="#ujian" data-page="ujian" class="nav-link">UTS/UAS</a></li>
+                    <li><a href="#referensi" data-page="referensi" class="nav-link">Referensi</a></li>
+                    <li><a href="#download" data-page="download" class="nav-link">Download</a></li>
+                    <li><a href="#kontak" data-page="kontak" class="nav-link">Kontak</a></li>
+
+                </ul>
+
+            </nav>
+
+            <div class="header-action">
+
+                <button id="theme-toggle" type="button" aria-label="Ganti tema">Theme</button>
+                <button id="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false">Menu</button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HOME / HERO (halaman dasar, selalu di belakang) ================= -->
+
+    <main id="page-home" class="app-page is-home is-active">
+
+        <section id="hero">
+
+            <div class="container">
+
+                <div class="hero-left">
+
+                    <div class="badge-container">
+                        <span>Fakultas Syariah</span>
+                    </div>
+
+                    <h1>Fikih<br>Munakahat</h1>
+
+                    <p>
+                        Mata kuliah Fikih Munakahat membahas prinsip dan ketentuan hukum perkawinan dalam Islam — mulai dari tujuan dan dasar hukum perkawinan, peminangan, rukun dan syarat akad, wali dan saksi, mahar, larangan perkawinan, hak dan kewajiban suami istri, hingga konflik rumah tangga, perceraian, iddah, dan rujuk — dengan memadukan Al-Qur'an, hadis, pandangan fuqaha, serta hukum keluarga yang berlaku di Indonesia.
+                    </p>
+
+                    <div class="hero-button">
+                        <button type="button" data-goto="rps">Mulai Belajar</button>
+                        <button type="button" class="ghost" data-goto="rps">RPS</button>
+                        <button type="button" class="ghost" data-goto="materi">Materi</button>
+                        <button type="button" class="ghost" data-goto="video">Video</button>
+                        <button type="button" class="ghost" data-goto="quiz">Quiz</button>
+                    </div>
+
+                </div>
+
+                <div class="hero-right">
+
+                    <div class="hero-animation">
+                        <div class="edu-stage">
+                            <svg class="edu-star-field" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(160,160)">
+                                    <polygon points="0,-120 14,-40 90,-84 34,-14 120,0 34,14 90,84 14,40 0,120 -14,40 -90,84 -34,14 -120,0 -34,-14 -90,-84 -14,-40" />
+                                    <polygon points="0,-80 10,-26 60,-56 22,-9 80,0 22,9 60,56 10,26 0,80 -10,26 -60,56 -22,9 -80,0 -22,-9 -60,-56 -10,-26" opacity="0.6"/>
+                                    <circle r="140" opacity="0.3"/>
+                                    <circle r="100" opacity="0.25"/>
+                                </g>
+                            </svg>
+
+                            <div class="edu-glow"></div>
+
+                            <div class="edu-book">
+                                <div class="edu-crescent"></div>
+                                <div class="edu-spine"></div>
+                                <div class="edu-page edu-left">
+                                    <div class="edu-lines"><span></span><span></span><span></span><span></span></div>
+                                </div>
+                                <div class="edu-page edu-right">
+                                    <div class="edu-lines"><span></span><span></span><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-card">
+                        <strong>Progress Belajar</strong>
+                        <div class="progress-bar"><span id="home-progress-bar" style="width:0%"></span></div>
+                        <small id="home-progress-text">0 / 16 pertemuan selesai</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="faq">
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Sering ditanyakan</span>Pertanyaan Umum</h2>
+
+                <div class="faq-list">
+
+                    <details class="card faq-item">
+                        <summary>Berapa jumlah pertemuan mata kuliah ini?</summary>
+                        <p>Perkuliahan berlangsung 16 pertemuan, termasuk UTS pada pertemuan ke-8 dan UAS pada pertemuan ke-16.</p>
+                    </details>
+
+                    <details class="card faq-item">
+                        <summary>Bagaimana bobot penilaian akhir dihitung?</summary>
+                        <p>Penilaian terdiri dari Kuis, Partisipasi &amp; Tugas Formatif 24%, Analisis Kasus/Presentasi/Paper 31%, UTS 15%, UAS 15%, serta Tugas dan Evaluasi Terstruktur Lainnya 15%. Bobot mingguan pada matriks pembelajaran berjumlah 100%.</p>
+                    </details>
+
+                    <details class="card faq-item">
+                        <summary>Berapa SKS mata kuliah ini?</summary>
+                        <p>Mata kuliah Fikih Munakahat dirancang 3 SKS (usulan) dan merupakan mata kuliah keprodian Program Studi Hukum Keluarga. Bobot resmi mengikuti kurikulum program studi.</p>
+                    </details>
+
+                    <details class="card faq-item">
+                        <summary>Apa saja sumber belajar utamanya?</summary>
+                        <p>Al-Qur'an dan hadis, karya fikih klasik (Wahbah al-Zuhayli dan Sayyid Sabiq), Kompilasi Hukum Islam (KHI), UU No. 1 Tahun 1974 sebagaimana diubah dengan UU No. 16 Tahun 2019, PP No. 9 Tahun 1975, serta artikel jurnal ilmiah mutakhir tentang hukum keluarga Islam di Indonesia.</p>
+                    </details>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+
+            <div class="container">
+
+                <h3>LMS Fikih Munakahat</h3>
+
+                <p>Program Studi Hukum Keluarga</p>
+                <p>Fakultas Syariah UIN Palopo</p>
+
+                <p>© 2026 UIN Palopo</p>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- ================= SUB-PAGES (overlay di atas Beranda) ================= -->
+
+    <div id="pages-root">
+
+        <!-- ================= PROFIL ================= -->
+
+        <section id="page-profil" class="app-page" data-title="Profil Mata Kuliah">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Profil</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Profil</span>Profil Mata Kuliah</h2>
+
+                <div class="profile-tables">
+
+                    <article class="profile-block full-width">
+                        <h3>Ringkasan Mata Kuliah</h3>
+                        <table class="profile-table kv">
+                            <tbody>
+                                <tr>
+                                    <th>Deskripsi</th>
+                                    <td>Mata kuliah Fikih Munakahat membahas prinsip dan ketentuan hukum perkawinan dalam Islam, mulai dari tujuan dan dasar hukum perkawinan, peminangan, rukun dan syarat akad, wali dan saksi, mahar, larangan perkawinan, hak serta kewajiban suami istri, hingga persoalan konflik rumah tangga, perceraian, iddah, dan rujuk. Pembelajaran memadukan kajian Al-Qur'an dan hadis, pandangan fuqaha dan mazhab, serta peraturan hukum keluarga yang berlaku di Indonesia. Mahasiswa diarahkan untuk mengembangkan penalaran hukum yang kontekstual, adil, dan berorientasi pada kemaslahatan serta perlindungan anggota keluarga.</td>
+                                </tr>
+                                <tr>
+                                    <th>Bahan Kajian</th>
+                                    <td>Pengantar Fikih Munakahat · Dasar Hukum, Tujuan, Prinsip &amp; Hikmah Perkawinan · Khitbah &amp; Etika Menuju Perkawinan · Rukun &amp; Syarat Perkawinan · Kafaah &amp; Wali Nikah · Mahar · Larangan Perkawinan &amp; Mahram · Hak dan Kewajiban Suami Istri, Nafkah &amp; Mu'asyarah bil Ma'ruf · Poligami, Pencatatan &amp; Batas Usia Perkawinan · Nusyuz, Syiqaq &amp; Mediasi · Talak, Khuluk, Fasakh · Iddah, Ihdad, Mut'ah &amp; Hak Anak · Rujuk · Isu Kontemporer &amp; Analisis Kasus Terpadu.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="profile-block">
+                        <h3>CPMK</h3>
+                        <table class="profile-table">
+                            <colgroup>
+                                <col style="width:96px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr><th>Kode</th><th>Capaian Pembelajaran</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>CPMK 1</td><td>Menjelaskan pengertian, dasar hukum, tujuan, prinsip, dan ruang lingkup fikih munakahat.</td></tr>
+                                <tr><td>CPMK 2</td><td>Menganalisis ketentuan peminangan, rukun dan syarat perkawinan, mahar, serta hak dan kewajiban suami istri berdasarkan dalil dan pandangan fikih.</td></tr>
+                                <tr><td>CPMK 3</td><td>Membandingkan pandangan mazhab dan menghubungkannya secara kritis dengan hukum perkawinan di Indonesia.</td></tr>
+                                <tr><td>CPMK 4</td><td>Menganalisis persoalan perkawinan, perceraian, rujuk, dan akibat hukumnya dengan mempertimbangkan keadilan, perlindungan keluarga, dan kemaslahatan.</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="profile-block">
+                        <h3>CPL</h3>
+                        <table class="profile-table">
+                            <colgroup>
+                                <col style="width:88px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr><th>Kode</th><th>Capaian Pembelajaran Lulusan</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>CPL 1</td><td>Mampu mengintegrasikan nilai-nilai keilmuan, keislaman, kemanusiaan, kebangsaan, dan kearifan lokal dalam kajian hukum keluarga Islam secara bertanggung jawab.</td></tr>
+                                <tr><td>CPL 2</td><td>Mampu memahami dan menerapkan konsep, teori, metode, serta penalaran hukum keluarga melalui pendekatan fikih, ushul fikih, dan sosial-kemasyarakatan dengan menghargai keragaman pandangan.</td></tr>
+                                <tr><td>CPL 3</td><td>Mampu menyusun argumentasi hukum keluarga untuk menganalisis persoalan perkawinan melalui telaah dalil, pendapat fuqaha, peraturan perundang-undangan, dan prinsip keadilan serta kemaslahatan.</td></tr>
+                                <tr><td>CPL 4</td><td>Mampu menyampaikan hasil kajian hukum keluarga secara lisan dan tertulis dengan etika akademik serta memanfaatkan sumber informasi yang dapat dipertanggungjawabkan.</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="profile-block full-width">
+                        <h3>Sub-CPMK</h3>
+                        <table class="profile-table">
+                            <colgroup>
+                                <col style="width:110px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr><th>Kode</th><th>Kemampuan Akhir Tiap Tahapan</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Sub-CPMK 1</td><td>Mendefinisikan fikih munakahat serta menjelaskan ruang lingkup dan urgensinya.</td></tr>
+                                <tr><td>Sub-CPMK 2</td><td>Menjelaskan dasar hukum, tujuan perkawinan, prinsip perkawinan, dan hikmah pensyariatannya.</td></tr>
+                                <tr><td>Sub-CPMK 3</td><td>Menganalisis peminangan (khitbah), batasan, etika, dan akibat hukumnya.</td></tr>
+                                <tr><td>Sub-CPMK 4</td><td>Mengidentifikasi rukun, syarat, wali, saksi, ijab kabul, serta konsep kafaah dalam perkawinan.</td></tr>
+                                <tr><td>Sub-CPMK 5</td><td>Menganalisis mahar, jenis-jenisnya, serta kedudukan dan ketentuannya dalam fikih dan hukum Indonesia.</td></tr>
+                                <tr><td>Sub-CPMK 6</td><td>Menjelaskan larangan perkawinan, hubungan mahram, serta perkawinan yang dilarang atau diperselisihkan.</td></tr>
+                                <tr><td>Sub-CPMK 7</td><td>Menganalisis hak dan kewajiban suami istri, nafkah, tempat tinggal, dan prinsip mu'asyarah bil ma'ruf.</td></tr>
+                                <tr><td>Sub-CPMK 8</td><td>Mengevaluasi konsep poligami dan perkawinan usia anak melalui perspektif fikih, peraturan, dan perlindungan keluarga.</td></tr>
+                                <tr><td>Sub-CPMK 9</td><td>Menganalisis konsep nusyuz, syiqaq, mediasi, dan upaya penyelesaian konflik rumah tangga.</td></tr>
+                                <tr><td>Sub-CPMK 10</td><td>Menjelaskan konsep talak, khuluk, fasakh, dan bentuk-bentuk putusnya perkawinan.</td></tr>
+                                <tr><td>Sub-CPMK 11</td><td>Menganalisis iddah, ihdad, mut'ah, nafkah pascaperceraian, dan perlindungan hak perempuan serta anak.</td></tr>
+                                <tr><td>Sub-CPMK 12</td><td>Menjelaskan rujuk, syarat-syaratnya, dan implikasinya terhadap hubungan perkawinan.</td></tr>
+                                <tr><td>Sub-CPMK 13</td><td>Menganalisis persoalan kontemporer hukum perkawinan dengan metode argumentasi fikih dan hukum positif.</td></tr>
+                                <tr><td>Sub-CPMK 14</td><td>Menyusun analisis kasus sederhana tentang persoalan munakahat secara sistematis dan beretika.</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="profile-block">
+                        <h3>Media Pembelajaran</h3>
+                        <table class="profile-table">
+                            <colgroup>
+                                <col style="width:56px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr><th>No</th><th>Media</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>01</td><td>Microsoft Word / PowerPoint</td></tr>
+                                <tr><td>02</td><td>LMS atau e-learning</td></tr>
+                                <tr><td>03</td><td>Basis data jurnal dan peraturan perundang-undangan</td></tr>
+                                <tr><td>04</td><td>Sumber digital yang terverifikasi</td></tr>
+                                <tr><td>05</td><td>Laptop, proyektor, papan tulis, dan perangkat pendukung presentasi</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="profile-block">
+                        <h3>Komponen Penilaian</h3>
+                        <table class="profile-table weighted">
+                            <colgroup>
+                                <col>
+                                <col style="width:90px">
+                            </colgroup>
+                            <thead>
+                                <tr><th>Komponen</th><th>Bobot</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Kuis, Partisipasi, dan Tugas Formatif</td><td>24%</td></tr>
+                                <tr><td>Analisis Kasus / Presentasi / Paper</td><td>31%</td></tr>
+                                <tr><td>Ujian Tengah Semester (UTS)</td><td>15%</td></tr>
+                                <tr><td>Ujian Akhir Semester (UAS)</td><td>15%</td></tr>
+                                <tr><td>Tugas dan Evaluasi Terstruktur Lainnya</td><td>15%</td></tr>
+                            </tbody>
+                            <tfoot>
+                                <tr><td>Total</td><td>100%</td></tr>
+                            </tfoot>
+                        </table>
+                    </article>
+
+                    <article class="profile-block full-width">
+                        <h3>Kontrak Perkuliahan</h3>
+                        <table class="profile-table kv">
+                            <tbody>
+                                <tr><th>Mata Kuliah</th><td>Fikih Munakahat</td></tr>
+                                <tr><th>Kode Mata Kuliah</th><td>Diisi sesuai kurikulum program studi</td></tr>
+                                <tr><th>Rumpun MK</th><td>Mata Kuliah Keprodian</td></tr>
+                                <tr><th>Bobot SKS</th><td>3 SKS (usulan; sesuaikan dengan kurikulum resmi)</td></tr>
+                                <tr><th>Semester</th><td>Disesuaikan dengan struktur kurikulum</td></tr>
+                                <tr><th>Dosen Pengembang RPS</th><td>Diisi oleh pihak berwenang</td></tr>
+                                <tr><th>Koordinator Mata Kuliah</th><td>Diisi oleh pihak berwenang</td></tr>
+                                <tr><th>Ketua Program Studi</th><td>Diisi oleh pihak berwenang</td></tr>
+                            </tbody>
+                        </table>
+                        <p>Perkuliahan dilaksanakan selama 16 pertemuan (termasuk UTS pada pertemuan ke-8 dan UAS pada pertemuan ke-16). Mahasiswa wajib mengikuti diskusi, mengumpulkan tugas tepat waktu, dan menjunjung tinggi etika akademik.</p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RPS ================= -->
+
+        <section id="page-rps" class="app-page" data-title="RPS">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">RPS</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">16 pertemuan</span>Rencana Pembelajaran Semester</h2>
+
+                <div class="rps-wrapper">
+
+                    <div class="timeline">
+
+                        <div class="timeline-item" data-week="1"><span class="week">1</span>Pengantar Fikih Munakahat</div>
+                        <div class="timeline-item" data-week="2"><span class="week">2</span>Dasar Hukum &amp; Maqashid</div>
+                        <div class="timeline-item" data-week="3"><span class="week">3</span>Khitbah</div>
+                        <div class="timeline-item" data-week="4"><span class="week">4</span>Rukun &amp; Syarat Nikah</div>
+                        <div class="timeline-item" data-week="5"><span class="week">5</span>Wali, Saksi &amp; Kafaah</div>
+                        <div class="timeline-item" data-week="6"><span class="week">6</span>Mahar</div>
+                        <div class="timeline-item" data-week="7"><span class="week">7</span>Larangan Perkawinan</div>
+                        <div class="timeline-item exam" data-week="8"><span class="week">8</span>UTS</div>
+                        <div class="timeline-item" data-week="9"><span class="week">9</span>Hak &amp; Kewajiban Suami Istri</div>
+                        <div class="timeline-item" data-week="10"><span class="week">10</span>Poligami &amp; Aturan Nikah</div>
+                        <div class="timeline-item" data-week="11"><span class="week">11</span>Nusyuz, Syiqaq &amp; Mediasi</div>
+                        <div class="timeline-item" data-week="12"><span class="week">12</span>Talak, Khuluk &amp; Fasakh</div>
+                        <div class="timeline-item" data-week="13"><span class="week">13</span>Iddah &amp; Hak Pascacerai</div>
+                        <div class="timeline-item" data-week="14"><span class="week">14</span>Rujuk</div>
+                        <div class="timeline-item" data-week="15"><span class="week">15</span>Isu Kontemporer</div>
+                        <div class="timeline-item exam" data-week="16"><span class="week">16</span>UAS</div>
+
+                    </div>
+
+                    <div class="rps-table">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Minggu</th>
+                                    <th>Materi</th>
+                                    <th>Sub-CPMK / Kemampuan Akhir</th>
+                                    <th>Indikator &amp; Bentuk Penilaian</th>
+                                    <th>Metode &amp; Penugasan</th>
+                                    <th>Bobot</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>1</td>
+                                    <td>Pengantar Fikih Munakahat</td>
+                                    <td>Mahasiswa mampu menjelaskan definisi, ruang lingkup, dan urgensi fikih munakahat.</td>
+                                    <td>Definisi tepat; ruang lingkup dan urgensi terurai. Penilaian: kuis diagnostik, partisipasi diskusi.</td>
+                                    <td>SCL; ceramah interaktif dan diskusi. Tugas: membandingkan definisi dari dua sumber.</td>
+                                    <td>3%</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Dasar hukum dan maqashid perkawinan</td>
+                                    <td>Mahasiswa mampu menganalisis dasar hukum, tujuan, dan prinsip perkawinan.</td>
+                                    <td>Mengidentifikasi dalil; menguraikan tujuan dan prinsip. Penilaian: resume dalil dan tanya jawab.</td>
+                                    <td>Diskusi kelompok dan analisis ayat/hadis. Tugas: peta konsep tujuan perkawinan.</td>
+                                    <td>4%</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Khitbah dan etika menuju perkawinan</td>
+                                    <td>Mahasiswa mampu menjelaskan khitbah dan ketentuannya.</td>
+                                    <td>Menjelaskan batasan, etika, dan akibat hukum khitbah. Penilaian: kuis dan studi kasus.</td>
+                                    <td>SCL; diskusi kasus. Tugas: analisis kasus peminangan.</td>
+                                    <td>4%</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Rukun dan syarat perkawinan</td>
+                                    <td>Mahasiswa mampu menganalisis rukun dan syarat perkawinan.</td>
+                                    <td>Membedakan rukun dan syarat; mengidentifikasi wali, saksi, ijab kabul. Penilaian: lembar analisis kasus.</td>
+                                    <td>Presentasi kelompok dan simulasi analisis akad.</td>
+                                    <td>6%</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Wali nikah, saksi, dan kafaah</td>
+                                    <td>Mahasiswa mampu membandingkan pandangan tentang wali, saksi, dan kafaah.</td>
+                                    <td>Menyajikan perbedaan pendapat mazhab beserta dasar argumennya. Penilaian: presentasi dan penilaian argumentasi.</td>
+                                    <td>Diskusi komparatif mazhab. Tugas: matriks perbandingan.</td>
+                                    <td>4%</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Mahar dalam fikih dan hukum Indonesia</td>
+                                    <td>Mahasiswa mampu menganalisis mahar dan hak istri.</td>
+                                    <td>Menjelaskan jenis, penetapan, dan kedudukan mahar. Penilaian: tugas ringkas dan kuis.</td>
+                                    <td>Kajian literatur dan diskusi. Tugas: analisis kasus mahar.</td>
+                                    <td>4%</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Larangan perkawinan dan mahram</td>
+                                    <td>Mahasiswa mampu mengidentifikasi larangan perkawinan.</td>
+                                    <td>Mengklasifikasikan larangan permanen dan sementara beserta dasar hukumnya. Penilaian: latihan klasifikasi dan diskusi.</td>
+                                    <td>Studi kasus dan telaah KHI.</td>
+                                    <td>4%</td>
+                                </tr>
+                                <tr class="exam-row">
+                                    <td>8</td>
+                                    <td><strong>Ujian Tengah Semester</strong> — Review materi Pertemuan 1-7</td>
+                                    <td>UTS: menguasai materi pertemuan 1–7.</td>
+                                    <td>Ketepatan konsep, analisis dalil, dan argumentasi. Penilaian: ujian tertulis (esai dan studi kasus).</td>
+                                    <td>Evaluasi terstruktur.</td>
+                                    <td>15%</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Hak-kewajiban suami istri dan nafkah</td>
+                                    <td>Mahasiswa mampu menganalisis hak dan kewajiban suami istri.</td>
+                                    <td>Menguraikan nafkah, tempat tinggal, relasi timbal balik, dan mu'asyarah bil ma'ruf. Penilaian: analisis kasus tertulis.</td>
+                                    <td>Diskusi kelompok dan pembahasan kasus.</td>
+                                    <td>4%</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Poligami, pencatatan, dan batas usia perkawinan</td>
+                                    <td>Mahasiswa mampu menilai isu poligami dan aturan perkawinan di Indonesia.</td>
+                                    <td>Membedakan pandangan fikih dan ketentuan hukum positif secara akurat. Penilaian: debat akademik terarah dan resume.</td>
+                                    <td>Debat berbasis sumber dan telaah peraturan.</td>
+                                    <td>6%</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>Nusyuz, syiqaq, dan mediasi</td>
+                                    <td>Mahasiswa mampu menganalisis nusyuz, syiqaq, dan penyelesaian konflik.</td>
+                                    <td>Mengidentifikasi konsep dan merumuskan opsi penyelesaian yang proporsional. Penilaian: studi kasus dan partisipasi.</td>
+                                    <td>Problem-based learning; simulasi mediasi.</td>
+                                    <td>4%</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>Talak, khuluk, fasakh, dan putusnya perkawinan</td>
+                                    <td>Mahasiswa mampu membedakan talak, khuluk, dan fasakh.</td>
+                                    <td>Menjelaskan definisi, dasar, prosedur umum, dan akibat hukum. Penilaian: kuis dan analisis putusan/kasus.</td>
+                                    <td>Diskusi dan telaah sumber hukum.</td>
+                                    <td>6%</td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>Iddah dan akibat hukum perceraian</td>
+                                    <td>Mahasiswa mampu menganalisis iddah dan hak pascaperceraian.</td>
+                                    <td>Menjelaskan iddah, ihdad, mut'ah, nafkah, dan kepentingan anak. Penilaian: esai analitis.</td>
+                                    <td>Studi kasus dan diskusi berbasis peraturan.</td>
+                                    <td>4%</td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>Rujuk dalam fikih dan hukum Indonesia</td>
+                                    <td>Mahasiswa mampu menjelaskan rujuk dan akibat hukumnya.</td>
+                                    <td>Menjelaskan syarat, ruang lingkup, dan implikasi rujuk. Penilaian: kuis dan diskusi kasus.</td>
+                                    <td>Analisis kasus berkelompok.</td>
+                                    <td>4%</td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>Isu kontemporer dan integrasi materi</td>
+                                    <td>Mahasiswa mampu menyusun analisis isu kontemporer munakahat.</td>
+                                    <td>Menggunakan dalil, pendapat ulama, peraturan, dan prinsip kemaslahatan secara runtut. Penilaian: paper/presentasi analisis kasus.</td>
+                                    <td>Seminar mini dan umpan balik sejawat.</td>
+                                    <td>13%</td>
+                                </tr>
+                                <tr class="exam-row">
+                                    <td>16</td>
+                                    <td><strong>Ujian Akhir Semester</strong> — Review seluruh materi</td>
+                                    <td>UAS: mengevaluasi dan menyintesis seluruh materi.</td>
+                                    <td>Ketepatan konsep, sintesis sumber, dan kualitas argumentasi. Penilaian: ujian akhir tertulis atau analisis kasus komprehensif.</td>
+                                    <td>Evaluasi akhir.</td>
+                                    <td>15%</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MATERI ================= -->
+
+        <section id="page-materi" class="app-page" data-title="Materi">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Materi</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">16 pertemuan</span>Materi Perkuliahan</h2>
+
+                <div class="materi-action">
+
+                    <input type="text" placeholder="Cari materi…" id="materi-search">
+
+                    <div class="filter">
+                        <button class="filter-btn active">Semua</button>
+                        <button class="filter-btn">Pengantar &amp; Dasar</button>
+                        <button class="filter-btn">Akad &amp; Perkawinan</button>
+                        <button class="filter-btn">Rumah Tangga &amp; Perceraian</button>
+                    </div>
+
+                </div>
+
+                <div class="materi-list">
+
+                    <article class="card materi-card" data-goto="pertemuan-1" tabindex="0" role="button" aria-label="Buka detail Pertemuan 1"><span class="tag">Pertemuan 1</span><h3>Pengantar Fikih Munakahat</h3><p>Definisi fikih munakahat, ruang lingkup kajian, dan urgensinya dalam hukum keluarga Islam.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-2" tabindex="0" role="button" aria-label="Buka detail Pertemuan 2"><span class="tag">Pertemuan 2</span><h3>Dasar Hukum, Tujuan, Prinsip, dan Hikmah Perkawinan</h3><p>Dalil Al-Qur'an dan hadis tentang perkawinan, maqashid perkawinan, prinsip-prinsipnya, serta hikmah pensyariatannya.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-3" tabindex="0" role="button" aria-label="Buka detail Pertemuan 3"><span class="tag">Pertemuan 3</span><h3>Khitbah dan Etika Menuju Perkawinan</h3><p>Pengertian khitbah, batasan dan etika peminangan, serta akibat hukumnya.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-4" tabindex="0" role="button" aria-label="Buka detail Pertemuan 4"><span class="tag">Pertemuan 4</span><h3>Rukun dan Syarat Perkawinan</h3><p>Perbedaan rukun dan syarat; calon pasangan, wali, saksi, dan ijab kabul.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-5" tabindex="0" role="button" aria-label="Buka detail Pertemuan 5"><span class="tag">Pertemuan 5</span><h3>Wali Nikah, Saksi, dan Kafaah</h3><p>Konsep, kedudukan, dan perbedaan pendapat mazhab tentang wali, saksi, dan kafaah.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-6" tabindex="0" role="button" aria-label="Buka detail Pertemuan 6"><span class="tag">Pertemuan 6</span><h3>Mahar dalam Fikih dan Hukum Indonesia</h3><p>Pengertian, jenis, penetapan mahar, dan hak istri atas mahar.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-7" tabindex="0" role="button" aria-label="Buka detail Pertemuan 7"><span class="tag">Pertemuan 7</span><h3>Larangan Perkawinan dan Mahram</h3><p>Larangan permanen dan sementara, konsep mahram, serta perkawinan yang dilarang atau diperselisihkan.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card exam" data-goto="ujian" tabindex="0" role="button" aria-label="Buka menu UTS/UAS"><span class="tag tag-exam">Pertemuan 8</span><h3>Ujian Tengah Semester (UTS)</h3><p>Review materi Pertemuan 1–7 dalam bentuk ujian tertulis: esai dan studi kasus.</p><span class="open-hint">Buka UTS/UAS &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-9" tabindex="0" role="button" aria-label="Buka detail Pertemuan 9"><span class="tag">Pertemuan 9</span><h3>Hak dan Kewajiban Suami Istri, Nafkah, dan Mu'asyarah bil Ma'ruf</h3><p>Nafkah, tempat tinggal, relasi timbal balik suami istri, dan prinsip pergaulan yang baik.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-10" tabindex="0" role="button" aria-label="Buka detail Pertemuan 10"><span class="tag">Pertemuan 10</span><h3>Poligami, Pencatatan Perkawinan, dan Batas Usia Perkawinan</h3><p>Poligami dalam fikih dan hukum positif, pencatatan perkawinan, serta batas usia perkawinan di Indonesia.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-11" tabindex="0" role="button" aria-label="Buka detail Pertemuan 11"><span class="tag">Pertemuan 11</span><h3>Nusyuz, Syiqaq, Mediasi, dan Penyelesaian Konflik Rumah Tangga</h3><p>Konsep nusyuz dan syiqaq, mediasi, serta opsi penyelesaian konflik yang proporsional.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-12" tabindex="0" role="button" aria-label="Buka detail Pertemuan 12"><span class="tag">Pertemuan 12</span><h3>Talak, Khuluk, Fasakh, dan Putusnya Perkawinan</h3><p>Definisi, dasar hukum, prosedur umum, dan akibat hukum talak, khuluk, serta fasakh.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-13" tabindex="0" role="button" aria-label="Buka detail Pertemuan 13"><span class="tag">Pertemuan 13</span><h3>Iddah, Ihdad, Mut'ah, Nafkah Pascaperceraian, dan Hak Anak</h3><p>Hak perempuan dan kepentingan anak setelah perceraian berdasarkan fikih dan peraturan.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-14" tabindex="0" role="button" aria-label="Buka detail Pertemuan 14"><span class="tag">Pertemuan 14</span><h3>Rujuk dan Akibat Hukum setelah Perceraian</h3><p>Syarat, ruang lingkup, dan implikasi rujuk dalam fikih dan hukum Indonesia.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-15" tabindex="0" role="button" aria-label="Buka detail Pertemuan 15"><span class="tag">Pertemuan 15</span><h3>Isu Kontemporer Fikih Munakahat dan Analisis Kasus Terpadu</h3><p>Analisis isu kontemporer dengan dalil, pendapat ulama, peraturan, dan prinsip kemaslahatan; seminar mini dan umpan balik sejawat.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card exam" data-goto="ujian" tabindex="0" role="button" aria-label="Buka menu UTS/UAS"><span class="tag tag-exam">Pertemuan 16</span><h3>Ujian Akhir Semester (UAS)</h3><p>Evaluasi dan sintesis seluruh materi melalui ujian tertulis atau analisis kasus komprehensif.</p><span class="open-hint">Buka UTS/UAS &rarr;</span></article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DETAIL PERTEMUAN (dibuka dari kartu Materi) ================= -->
+
+        <section id="page-pertemuan" class="app-page" data-title="Pertemuan">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="materi">&larr; Materi</button>
+                <span class="page-crumb" id="pertemuan-crumb">Pertemuan</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow" id="pertemuan-eyebrow">Pertemuan</span><span id="pertemuan-title">Judul Pertemuan</span></h2>
+
+                <article class="profile-block full-width">
+                    <h3>Modul Ringkas</h3>
+                    <div id="pertemuan-modul"><!-- diisi otomatis oleh script.js --></div>
+                </article>
+
+                <h3 class="pertemuan-subheading">Video Pembelajaran</h3>
+                <div class="video-list pertemuan-video-list">
+
+                    <article class="card video-card" id="pertemuan-video-card" data-youtube="" tabindex="0" role="button" aria-label="Putar video pertemuan ini">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3 id="pertemuan-video-title">Video Pertemuan</h3>
+                        <p id="pertemuan-video-desc"></p>
+                    </article>
+
+                </div>
+
+                <h3 class="pertemuan-subheading">Studi Kasus</h3>
+                <article class="card pertemuan-case">
+                    <p id="pertemuan-case-text"></p>
+                </article>
+
+                <h3 class="pertemuan-subheading">Uji Formatif</h3>
+                <article class="profile-block full-width formatif-block" id="pertemuan-formatif-block">
+
+                    <h4 class="formatif-heading">A. Pilihan Ganda <span class="formatif-count">(10 soal)</span></h4>
+                    <div id="pertemuan-mcq-list" class="formatif-mcq-list"><!-- diisi otomatis oleh script.js --></div>
+
+                    <h4 class="formatif-heading">B. Soal Esai <span class="formatif-count">(5 soal)</span></h4>
+                    <div id="pertemuan-essay-list" class="formatif-essay-list"><!-- diisi otomatis oleh script.js --></div>
+
+                    <button type="button" id="pertemuan-formatif-submit">Kumpulkan Uji Formatif</button>
+                    <p class="formatif-result" id="pertemuan-formatif-result"></p>
+
+                    <div class="formatif-send-wa" id="formatif-send-wa" hidden>
+                        <p class="formatif-identity-note" id="formatif-identity-note"></p>
+                        <button type="button" id="formatif-edit-identity-btn" class="ghost-small">Ubah data</button>
+                        <button type="button" id="formatif-email-btn">Kirim jawaban Esai</button>
+                    </div>
+
+                    <p class="formatif-empty" id="pertemuan-formatif-empty" hidden>Uji formatif untuk pertemuan ini belum tersedia.</p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= VIDEO ================= -->
+
+        <section id="page-video" class="app-page" data-title="Video">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Video</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Tonton</span>Video Pembelajaran</h2>
+
+                <div class="video-filter">
+                    <button class="filter-btn active">Semua</button>
+                    <button class="filter-btn">Teori Dasar</button>
+                    <button class="filter-btn">Studi Kasus</button>
+                </div>
+
+                <div class="video-list">
+
+                    <!--
+                        Cara isi link YouTube:
+                        Ganti nilai data-youtube="" dengan ID atau URL video YouTube-mu, misal:
+                        data-youtube="dQw4w9WgXcQ"
+                        data-youtube="https://youtu.be/dQw4w9WgXcQ"
+                        data-youtube="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                        Kartu tanpa link akan menampilkan pesan "Video belum ditautkan" saat diklik.
+                        Judul di bawah sudah disesuaikan dengan RPS — tinggal sambungkan tiap link ke judul yang sesuai.
+                    -->
+
+                    <article class="card video-card" data-youtube="https://youtu.be/7NyGJknIZDw" data-week="1" tabindex="0" role="button" aria-label="Putar video: Pengantar Fikih Munakahat">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Pengantar Fikih Munakahat</h3> 
+                        <p>Pertemuan 1 · Definisi, ruang lingkup &amp; urgensi</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/EQkJhseC5bk" data-week="2" tabindex="0" role="button" aria-label="Putar video: Dasar Hukum, Tujuan, Prinsip, dan Hikmah Perkawinan">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Dasar Hukum, Tujuan, Prinsip, dan Hikmah Perkawinan</h3>
+                        <p>Pertemuan 2 · Dalil, maqashid &amp; prinsip perkawinan</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/PivmJvxWXkM" data-week="3" tabindex="0" role="button" aria-label="Putar video: Khitbah dan Etika Menuju Perkawinan">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Khitbah dan Etika Menuju Perkawinan</h3>
+                        <p>Pertemuan 3 · Batasan, etika &amp; akibat hukum khitbah</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/nK59sKNV8DM" data-week="4" tabindex="0" role="button" aria-label="Putar video: Rukun dan Syarat Perkawinan">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Rukun dan Syarat Perkawinan</h3>
+                        <p>Pertemuan 4 · Calon pasangan, wali, saksi &amp; ijab kabul</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/Wc2iflmN144" data-week="5" tabindex="0" role="button" aria-label="Putar video: Wali Nikah, Saksi, dan Kafaah">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Wali Nikah, Saksi, dan Kafaah</h3>
+                        <p>Pertemuan 5 · Perbedaan pendapat mazhab</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/5eY4QiSyiRg" data-week="6" tabindex="0" role="button" aria-label="Putar video: Mahar dalam Fikih dan Hukum Indonesia">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Mahar dalam Fikih dan Hukum Indonesia</h3>
+                        <p>Pertemuan 6 · Jenis, penetapan &amp; hak istri</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/udB3jiwH0ic" data-week="7" tabindex="0" role="button" aria-label="Putar video: Larangan Perkawinan dan Mahram">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Larangan Perkawinan dan Mahram</h3>
+                        <p>Pertemuan 7 · Larangan permanen &amp; sementara</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/MdIHG5-SjxI" data-week="9" tabindex="0" role="button" aria-label="Putar video: Hak dan Kewajiban Suami Istri">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Hak dan Kewajiban Suami Istri, Nafkah, dan Mu'asyarah bil Ma'ruf</h3>
+                        <p>Pertemuan 9 · Nafkah, tempat tinggal &amp; relasi timbal balik</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="" data-week="10" tabindex="0" role="button" aria-label="Putar video: Poligami, Pencatatan, dan Batas Usia Perkawinan">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Poligami, Pencatatan, dan Batas Usia Perkawinan</h3>
+                        <p>Pertemuan 10 · Fikih dan hukum positif Indonesia</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/qfzaST1mfdY" data-week="11" tabindex="0" role="button" aria-label="Putar video: Nusyuz, Syiqaq, dan Mediasi">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Nusyuz, Syiqaq, dan Mediasi</h3>
+                        <p>Pertemuan 11 · Penyelesaian konflik rumah tangga</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/OeV-rPEvgS0" data-week="12" tabindex="0" role="button" aria-label="Putar video: Talak, Khuluk, Fasakh, dan Putusnya Perkawinan">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Talak, Khuluk, Fasakh, dan Putusnya Perkawinan</h3>
+                        <p>Pertemuan 12 · Definisi, dasar hukum &amp; akibat hukum</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/eek2xkqI8uc" data-week="13" tabindex="0" role="button" aria-label="Putar video: Iddah dan Akibat Hukum Perceraian">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Iddah dan Akibat Hukum Perceraian</h3>
+                        <p>Pertemuan 13 · Iddah, ihdad, mut'ah &amp; hak anak</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/kpqWz09hAAU" data-week="14" tabindex="0" role="button" aria-label="Putar video: Rujuk dalam Fikih dan Hukum Indonesia">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Rujuk dalam Fikih dan Hukum Indonesia</h3>
+                        <p>Pertemuan 14 · Syarat, ruang lingkup &amp; implikasi rujuk</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/q12d2Aiv35o" data-week="15" tabindex="0" role="button" aria-label="Putar video: Isu Kontemporer Fikih Munakahat">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Isu Kontemporer Fikih Munakahat dan Analisis Kasus Terpadu</h3>
+                        <p>Pertemuan 15 · Dalil, pendapat ulama, peraturan &amp; kemaslahatan</p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STUDI KASUS ================= -->
+
+        <section id="page-kasus" class="app-page" data-title="Studi Kasus">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Studi Kasus</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Praktik</span>Studi Kasus</h2>
+
+                <div class="case-list">
+
+                    <article class="card"><h3>Peminangan dan Akibat Hukumnya</h3><p>Pertemuan 3 · Analisis kasus peminangan: batasan, etika, dan akibat hukum khitbah.</p></article>
+                    <article class="card"><h3>Analisis Akad: Rukun, Wali, Saksi &amp; Ijab Kabul</h3><p>Pertemuan 4–5 · Simulasi analisis akad dan perbandingan pendapat mazhab tentang wali, saksi, dan kafaah.</p></article>
+                    <article class="card"><h3>Sengketa Mahar</h3><p>Pertemuan 6 · Analisis kasus mahar: jenis, penetapan, dan hak istri.</p></article>
+                    <article class="card"><h3>Perkawinan Terlarang dan Mahram</h3><p>Pertemuan 7 · Telaah KHI atas kasus larangan perkawinan permanen dan sementara.</p></article>
+                    <article class="card"><h3>Nafkah dan Hak Istri dalam Rumah Tangga</h3><p>Pertemuan 9 · Analisis hak dan kewajiban suami istri, nafkah, dan tempat tinggal.</p></article>
+                    <article class="card"><h3>Poligami dan Dispensasi Usia Perkawinan</h3><p>Pertemuan 10 · Debat berbasis sumber: pandangan fikih versus ketentuan hukum positif.</p></article>
+                    <article class="card"><h3>Konflik Rumah Tangga: Nusyuz dan Syiqaq</h3><p>Pertemuan 11 · Simulasi mediasi dan perumusan opsi penyelesaian yang proporsional.</p></article>
+                    <article class="card"><h3>Talak, Khuluk, dan Fasakh dalam Putusan</h3><p>Pertemuan 12 · Analisis putusan/kasus untuk membedakan bentuk putusnya perkawinan.</p></article>
+                    <article class="card"><h3>Hak Pascaperceraian dan Kepentingan Anak</h3><p>Pertemuan 13 · Esai analitis iddah, mut'ah, nafkah, dan perlindungan anak.</p></article>
+                    <article class="card"><h3>Rujuk dan Akibat Hukumnya</h3><p>Pertemuan 14 · Analisis kasus berkelompok tentang syarat dan implikasi rujuk.</p></article>
+                    <article class="card"><h3>Isu Kontemporer Fikih Munakahat</h3><p>Pertemuan 15 · Paper/presentasi analisis kasus terpadu dalam seminar mini.</p></article>
+
+                </div>
+
+                <div class="case-workspace">
+
+                    <h3>Analisis Kasus</h3>
+
+                    <textarea placeholder="Tuliskan analisis Anda..."></textarea>
+
+                    <button type="button">Kirim Analisis</button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUIZ ================= -->
+
+        <section id="page-quiz" class="app-page" data-title="Quiz">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Quiz</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Uji pemahaman</span>Quiz Fikih Munakahat</h2>
+
+                <div class="quiz-progress">
+                    <div class="progress-bar"><span style="width:0%"></span></div>
+                    <small>Soal 1 dari 5</small>
+                </div>
+
+                <div class="quiz-container">
+
+                    <div class="card quiz-question">
+                        <h3>1. Peminangan seorang laki-laki kepada perempuan untuk dijadikan istri, sebelum akad nikah dilaksanakan, dikenal dengan istilah...</h3>
+                        <label><input type="radio" name="q1"> Khitbah</label>
+                        <label><input type="radio" name="q1"> Mahar</label>
+                        <label><input type="radio" name="q1"> Rujuk</label>
+                        <label><input type="radio" name="q1"> Fasakh</label>
+                    </div>
+
+                    <div class="card quiz-question">
+                        <h3>2. Mahram yang timbul karena hubungan pernikahan (misalnya ibu mertua) termasuk kategori...</h3>
+                        <label><input type="radio" name="q2"> Mahram nasab</label>
+                        <label><input type="radio" name="q2"> Mahram mushaharah</label>
+                        <label><input type="radio" name="q2"> Mahram radha'ah</label>
+                        <label><input type="radio" name="q2"> Mahram sementara</label>
+                    </div>
+
+                    <div class="card quiz-question">
+                        <h3>3. Perceraian atas permintaan istri dengan membayar tebusan (iwadh) kepada suami disebut...</h3>
+                        <label><input type="radio" name="q3"> Talak raj'i</label>
+                        <label><input type="radio" name="q3"> Khuluk</label>
+                        <label><input type="radio" name="q3"> Ila'</label>
+                        <label><input type="radio" name="q3"> Zhihar</label>
+                    </div>
+
+                    <div class="card quiz-question">
+                        <h3>4. Menurut UU No. 16 Tahun 2019, batas minimal usia perkawinan bagi laki-laki dan perempuan adalah...</h3>
+                        <label><input type="radio" name="q4"> 16 tahun</label>
+                        <label><input type="radio" name="q4"> 17 tahun</label>
+                        <label><input type="radio" name="q4"> 18 tahun</label>
+                        <label><input type="radio" name="q4"> 19 tahun</label>
+                    </div>
+
+                    <div class="card quiz-question">
+                        <h3>5. Masa tunggu yang wajib dijalani perempuan setelah putusnya perkawinan sebelum boleh menikah lagi disebut...</h3>
+                        <label><input type="radio" name="q5"> Iddah</label>
+                        <label><input type="radio" name="q5"> Qasm</label>
+                        <label><input type="radio" name="q5"> Kafaah</label>
+                        <label><input type="radio" name="q5"> Mut'ah</label>
+                    </div>
+
+                    <button type="button">Kumpulkan Jawaban</button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= UJIAN ================= -->
+
+        <section id="page-ujian" class="app-page" data-title="UTS/UAS">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">UTS/UAS</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Evaluasi</span>UTS &amp; UAS</h2>
+
+                <div class="exam-container">
+
+                    <article class="exam-card">
+                        <h3>UTS</h3>
+                        <p>Materi Pertemuan 1–7</p>
+                        <p>Bentuk: Ujian tertulis (esai dan studi kasus) · Bobot 15%</p>
+                        <p class="timer">Timer</p>
+                    </article>
+
+                    <article class="exam-card">
+                        <h3>UAS</h3>
+                        <p>Seluruh materi (Pertemuan 1–15)</p>
+                        <p>Bentuk: Ujian akhir tertulis atau analisis kasus komprehensif · Bobot 15%</p>
+                        <p class="timer">Timer</p>
+                    </article>
+
+                </div>
+
+                <article class="profile-block full-width" style="margin-top:20px;">
+                    <h3>Rekapitulasi Penilaian</h3>
+                    <table class="profile-table weighted">
+                        <colgroup>
+                            <col>
+                            <col style="width:90px">
+                        </colgroup>
+                        <thead>
+                            <tr><th>Komponen</th><th>Bobot</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Kuis, Partisipasi, dan Tugas Formatif</td><td>24%</td></tr>
+                            <tr><td>Analisis Kasus / Presentasi / Paper</td><td>31%</td></tr>
+                            <tr><td>UTS</td><td>15%</td></tr>
+                            <tr><td>UAS</td><td>15%</td></tr>
+                            <tr><td>Tugas dan Evaluasi Terstruktur Lainnya</td><td>15%</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr><td>Total</td><td>100%</td></tr>
+                        </tfoot>
+                    </table>
+                    <p class="note">Bobot mingguan pada matriks pembelajaran berjumlah 100%. Rancangan perlu ditinjau dan disahkan oleh dosen pengampu serta diselaraskan dengan kebijakan penilaian program studi.</p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= REFERENSI ================= -->
+
+        <section id="page-referensi" class="app-page" data-title="Referensi">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Referensi</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Bacaan</span>Referensi</h2>
+
+                <div class="reference-list">
+
+                    <article class="card"><span class="tag">Utama</span><p>Wahbah al-Zuhayli. <em>Al-Fiqh al-Islami wa Adillatuhu</em>. Damaskus: Dar al-Fikr.</p></article>
+                    <article class="card"><span class="tag">Utama</span><p>Sayyid Sabiq. <em>Fiqh al-Sunnah</em>. Kairo: Dar al-Fath / edisi yang tersedia.</p></article>
+                    <article class="card"><span class="tag">Utama</span><p>Kementerian Agama Republik Indonesia. <em>Al-Qur'an dan Terjemahannya</em>.</p></article>
+                    <article class="card"><span class="tag">Peraturan</span><p>Kompilasi Hukum Islam (KHI), khususnya Buku I tentang Hukum Perkawinan.</p></article>
+                    <article class="card"><span class="tag">Peraturan</span><p>Undang-Undang Nomor 1 Tahun 1974 tentang Perkawinan sebagaimana diubah dengan Undang-Undang Nomor 16 Tahun 2019.</p></article>
+                    <article class="card"><span class="tag">Peraturan</span><p>Peraturan Pemerintah Nomor 9 Tahun 1975 tentang Pelaksanaan Undang-Undang Perkawinan.</p></article>
+                    <article class="card"><span class="tag">Peraturan</span><p>Peraturan Mahkamah Agung dan peraturan terkait yang relevan, diperiksa berdasarkan isu dan ketentuan terbaru.</p></article>
+                    <article class="card"><span class="tag">Pendukung</span><p>Abu Dawud, <em>Sunan Abi Dawud</em>; al-Tirmidzi, <em>Jami' al-Tirmidzi</em>; dan kitab hadis relevan mengenai perkawinan.</p></article>
+                    <article class="card"><span class="tag">Pendukung</span><p>Karya fikih munakahat dan artikel jurnal ilmiah mutakhir tentang hukum keluarga Islam di Indonesia.</p></article>
+
+                </div>
+
+                <p class="note" style="margin-top:16px;">Referensi di atas merupakan usulan awal. Dosen pengampu perlu memeriksa edisi, penerbit, dan kesesuaian dengan kebijakan program studi.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DOWNLOAD ================= -->
+
+        <section id="page-download" class="app-page" data-title="Download">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Download</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Berkas</span>Download Materi</h2>
+
+                <div class="download-list">
+
+                    <article class="card download-item"><span class="file-icon">⬇</span><div><h3>RPS Fikih Munakahat</h3><p>Rencana Pembelajaran Semester lengkap 16 pertemuan.</p></div><button type="button">Download</button></article>
+                    <article class="card download-item"><span class="file-icon">⬇</span><div><h3>Modul Pembelajaran</h3><p>Modul per pertemuan beserta latihan &amp; tugas.</p></div><button type="button">Download</button></article>
+                    <article class="card download-item"><span class="file-icon">⬇</span><div><h3>Matriks Pembelajaran &amp; Rekapitulasi Penilaian</h3><p>Ringkasan Sub-CPMK, indikator, bentuk penilaian, dan bobot per pertemuan.</p></div><button type="button">Download</button></article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= KONTAK ================= -->
+
+        <section id="page-kontak" class="app-page" data-title="Kontak">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Kontak</span>
+            </div>
+
+            <div class="container kontak-grid">
+
+                <div class="contact-info">
+
+                    <h2><span class="eyebrow">Hubungi</span>Dosen Pengampu</h2>
+                    <h3>[Nama Dosen Pengampu]</h3>
+                    <p>Dosen Pengampu &amp; Pengembang RPS</p>
+                    <p>Koordinator Mata Kuliah: [Nama Koordinator]</p>
+                    <p>Program Studi Hukum Keluarga · Fakultas Syariah UIN Palopo</p>
+
+                </div>
+
+                <form id="kontak-form">
+                    <input type="text" id="kontak-nama" placeholder="Nama" required>
+                    <input type="text" id="kontak-nim" placeholder="NIM" required>
+                    <input type="text" id="kontak-subjek" placeholder="Subjek" required>
+                    <textarea id="kontak-pesan" placeholder="Pesan" required></textarea>
+                    <button type="submit">Kirim</button>
+                </form>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- Overlay backdrop untuk mobile menu -->
+    <div id="nav-backdrop"></div>
+
+    <!-- Modal Identitas Mahasiswa -->
+    <div id="identity-modal" class="identity-modal" hidden aria-hidden="true">
+        <div class="identity-modal-backdrop" data-close-identity></div>
+        <div class="identity-modal-inner" role="dialog" aria-modal="true" aria-label="Isi identitas mahasiswa">
+            <button type="button" class="identity-modal-close" data-close-identity aria-label="Tutup">&times;</button>
+            <h3>Identitas Mahasiswa</h3>
+            <p class="identity-modal-desc">Diisi sekali saja. Data ini dipakai untuk mengumpulkan Uji Formatif ke dosen pengampu via Email.</p>
+            <form id="identity-form">
+                <input type="text" id="identity-nim" placeholder="NIM" required>
+                <input type="text" id="identity-nama" placeholder="Nama Lengkap" required>
+                <input type="text" id="identity-kelas" placeholder="Kelas / Angkatan" required>
+                <button type="submit">Simpan &amp; Lanjutkan</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal player YouTube -->
+    <div id="video-modal" class="video-modal" hidden aria-hidden="true">
+        <div class="video-modal-backdrop" data-close-modal></div>
+        <div class="video-modal-inner" role="dialog" aria-modal="true" aria-label="Pemutar video">
+            <button type="button" class="video-modal-close" data-close-modal aria-label="Tutup video">&times;</button>
+            <h3 id="video-modal-title"></h3>
+            <div class="video-embed">
+                <iframe id="video-modal-frame"
+                        src=""
+                        title="Pemutar video YouTube"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="../shared/core.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LMS Ulumul Qur'an — Dr. Rahmawati, M.Ag &amp; Dr. Mustaming, M.HI</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../shared/core.css">
+    <link rel="stylesheet" href="ulumul-theme.css">
+
+    <!-- Styling sementara khusus untuk fitur "Materi Pokok" yang bisa diklik.
+         Kalau nanti sudah stabil, ini bisa dipindah ke ulumul-theme.css. -->
+    <style>
+        .materi-pokok-list { display: flex; flex-direction: column; gap: 10px; margin: 10px 0 18px; }
+        .materi-pokok-item { padding: 14px 18px; }
+        .materi-pokok-item summary {
+            cursor: pointer;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.02rem;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .materi-pokok-item summary::-webkit-details-marker { display: none; }
+        .materi-pokok-item summary::after {
+            content: "+";
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            flex: none;
+            opacity: .7;
+            transition: transform .2s ease;
+        }
+        .materi-pokok-item[open] summary::after { content: "–"; }
+        .materi-pokok-detail {
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid var(--line);
+            font-size: .95rem;
+            line-height: 1.7;
+        }
+        .materi-pokok-detail h4 {
+            font-family: var(--font-display);
+            font-size: .98rem;
+            margin: 16px 0 6px;
+        }
+        .materi-pokok-detail h4:first-child { margin-top: 0; }
+        .materi-pokok-detail p { margin: 0 0 10px; }
+        .rangkuman-board {
+            margin-top: 14px;
+            padding: 14px 16px;
+            border-radius: var(--radius-s);
+            background: var(--parchment-dim, rgba(255,204,0,.08));
+            border: 1px solid var(--line-strong);
+        }
+        .rangkuman-board strong {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: .78rem;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            opacity: .8;
+        }
+        .rangkuman-board p { margin: 0; font-size: .93rem; line-height: 1.65; }
+        .materi-pokok-plain { margin: 0 0 8px; }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header id="site-header">
+
+        <div class="container">
+
+            <a href="#home" class="logo" data-page="home">
+                <h2>LMS Ulumul Qur'an</h2>
+                <span>UIN Palopo</span>
+            </a>
+
+            <nav id="main-nav">
+
+                <ul>
+
+                    <li><a href="#home" data-page="home" class="nav-link active">Beranda</a></li>
+                    <li><a href="#profil" data-page="profil" class="nav-link">Profil</a></li>
+                    <li><a href="#rps" data-page="rps" class="nav-link">RPS</a></li>
+                    <li><a href="#materi" data-page="materi" class="nav-link">Materi</a></li>
+                    <li><a href="#video" data-page="video" class="nav-link">Video</a></li>
+                    <li><a href="#kasus" data-page="kasus" class="nav-link">Studi Kasus</a></li>
+                    <li><a href="#quiz" data-page="quiz" class="nav-link">Quiz</a></li>
+                    <li><a href="#ujian" data-page="ujian" class="nav-link">UTS/UAS</a></li>
+                    <li><a href="#referensi" data-page="referensi" class="nav-link">Referensi</a></li>
+                    <li><a href="#download" data-page="download" class="nav-link">Download</a></li>
+                    <li><a href="#kontak" data-page="kontak" class="nav-link">Kontak</a></li>
+
+                </ul>
+
+            </nav>
+
+            <div class="header-action">
+
+                <button id="theme-toggle" type="button" aria-label="Ganti tema">Theme</button>
+                <button id="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false">Menu</button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HOME / HERO (halaman dasar, selalu di belakang) ================= -->
+
+    <main id="page-home" class="app-page is-home is-active">
+
+        <section id="hero">
+
+            <div class="container">
+
+                <div class="hero-left">
+
+                    <div class="badge-container">
+                        <span>Program Sarjana</span>
+                    </div>
+
+                    <h1>Ulumul<br>Qur'an</h1>
+
+                    <p>
+                        Mata kuliah Ulumul Qur'an membahas ilmu-ilmu Al-Qur'an sebagai fondasi metodologis untuk memahami dan menafsirkan kitab suci — mulai dari hakikat wahyu, sejarah turunnya Al-Qur'an, kodifikasi mushaf, rasm dan qira'at, asbabun nuzul, nasikh-mansukh, muhkam-mutasyabih, gaya bahasa Al-Qur'an, i'jazul Qur'an, hingga metode dan corak tafsir klasik sampai kontemporer.
+                    </p>
+
+                    <div class="hero-button">
+                        <button type="button" data-goto="rps">Mulai Belajar</button>
+                        <button type="button" class="ghost" data-goto="rps">RPS</button>
+                        <button type="button" class="ghost" data-goto="materi">Materi</button>
+                        <button type="button" class="ghost" data-goto="video">Video</button>
+                        <button type="button" class="ghost" data-goto="quiz">Quiz</button>
+                    </div>
+
+                </div>
+
+                <div class="hero-right">
+
+                    <div class="hero-animation">
+                        <div class="edu-stage">
+                            <svg class="edu-star-field" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(160,160)">
+                                    <polygon points="0,-120 14,-40 90,-84 34,-14 120,0 34,14 90,84 14,40 0,120 -14,40 -90,84 -34,14 -120,0 -34,-14 -90,-84 -14,-40" />
+                                    <polygon points="0,-80 10,-26 60,-56 22,-9 80,0 22,9 60,56 10,26 0,80 -10,26 -60,56 -22,9 -80,0 -22,-9 -60,-56 -10,-26" opacity="0.6"/>
+                                    <circle r="140" opacity="0.3"/>
+                                    <circle r="100" opacity="0.25"/>
+                                </g>
+                            </svg>
+
+                            <div class="edu-glow"></div>
+
+                            <div class="edu-book">
+                                <div class="edu-crescent"></div>
+                                <div class="edu-spine"></div>
+                                <div class="edu-page edu-left">
+                                    <div class="edu-lines"><span></span><span></span><span></span><span></span></div>
+                                </div>
+                                <div class="edu-page edu-right">
+                                    <div class="edu-lines"><span></span><span></span><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-card">
+                        <strong>Progress Belajar</strong>
+                        <div class="progress-bar"><span id="home-progress-bar" style="width:0%"></span></div>
+                        <small id="home-progress-text">0 / 16 pertemuan selesai</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="faq">
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Sering ditanyakan</span>Pertanyaan Umum</h2>
+
+                <div class="faq-list">
+
+                    <details class="card faq-item">
+                        <summary>Berapa jumlah pertemuan mata kuliah ini?</summary>
+                        <p>Perkuliahan berlangsung 16 pertemuan, termasuk UTS pada pertemuan ke-8 dan UAS pada pertemuan ke-16.</p>
+                    </details>
+
+                    <details class="card faq-item">
+                        <summary>Bagaimana bobot penilaian akhir dihitung?</summary>
+                        <p>Penilaian terdiri atas tugas &amp; partisipasi mingguan (Pertemuan 1-7, 9-15), UTS 15%, dan UAS 15%, dengan bobot rinci tiap pertemuan mengikuti kolom Bobot Penilaian pada RPS.</p>
+                    </details>
+
+                    <details class="card faq-item">
+                        <summary>Siapa dosen pengampu mata kuliah ini?</summary>
+                        <p>Mata kuliah diampu oleh Dr. Rahmawati, M.Ag dan Dr. Mustaming, M.HI, dengan Ketua Program Studi Hardianto, S.H., M.H.</p>
+                    </details>
+
+                    <details class="card faq-item">
+                        <summary>Apa metode pembelajaran yang digunakan?</summary>
+                        <p>Kombinasi Student Centered Learning (SCL): ceramah interaktif, diskusi kelompok, presentasi kelompok, studi kasus, workshop analisis teks, seminar mini, dan diskusi panel sesuai topik tiap pertemuan.</p>
+                    </details>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+
+            <div class="container">
+
+                <h3>LMS Ulumul Qur'an</h3>
+
+                <p>Program Studi Hukum Keluarga dan Hukum Ekonomi Syariah</p>
+                <p>Fakultas Syariah UIN Palopo</p>
+
+                <p>© 2026 UIN Palopo</p>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- ================= SUB-PAGES (overlay di atas Beranda) ================= -->
+
+    <div id="pages-root">
+
+        <!-- ================= PROFIL ================= -->
+
+        <section id="page-profil" class="app-page" data-title="Profil Mata Kuliah">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Profil</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Profil</span>Profil Mata Kuliah</h2>
+
+                <div class="profile-tables">
+
+                    <article class="profile-block full-width">
+                        <h3>Ringkasan Mata Kuliah</h3>
+                        <table class="profile-table kv">
+                            <tbody>
+                                <tr>
+                                    <th>Deskripsi</th>
+                                    <td>Mata kuliah ini merupakan kajian komprehensif tentang ilmu-ilmu Al-Qur'an (Ulumul Qur'an) yang berfungsi sebagai fondasi metodologis untuk memahami dan menafsirkan kitab suci umat Islam. Perkuliahan dirancang untuk membekali mahasiswa dengan pemahaman historis, epistemologis, dan praktis mengenai seluk-beluk Al-Qur'an, mulai dari proses turunnya wahyu, kodifikasi, aspek kebahasaan, hingga perkembangan metodologi penafsiran dari era klasik hingga kontemporer.</td>
+                                </tr>
+                                <tr>
+                                    <th>Tujuan</th>
+                                    <td>Mahasiswa mampu menjelaskan pengertian, ruang lingkup, urgensi, dan sejarah perkembangan Ulumul Qur'an; menganalisis sejarah turunnya Al-Qur'an, pembukuannya, serta proses penentuan bacaan (rasm dan qira'at); menganalisis aspek kebahasaan Al-Qur'an (muhkam-mutasyabih, amm-khass, mutlaq-muqayyad, majaz-kinayah) dan implikasinya terhadap penafsiran; serta mengevaluasi metode dan corak penafsiran Al-Qur'an klasik hingga kontemporer dan menerapkannya dalam menganalisis isu-isu aktual.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="profile-block">
+                        <h3>CPMK</h3>
+                        <table class="profile-table">
+                            <colgroup>
+                                <col style="width:96px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr><th>Kode</th><th>Capaian Pembelajaran</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>CPMK 1</td><td>Menjelaskan pengertian, ruang lingkup, urgensi, dan sejarah perkembangan Ulumul Qur'an sebagai sebuah disiplin ilmu.</td></tr>
+                                <tr><td>CPMK 2</td><td>Menganalisis sejarah turunnya Al-Qur'an, pembukuannya, serta proses penentuan bacaan (rasm dan qira'at) beserta problematikanya.</td></tr>
+                                <tr><td>CPMK 3</td><td>Menganalisis aspek kebahasaan Al-Qur'an (muhkam-mutasyabih, amm-khass, mutlaq-muqayyad, majaz-kinayah) dan implikasinya terhadap penafsiran.</td></tr>
+                                <tr><td>CPMK 4</td><td>Mengevaluasi metode dan corak penafsiran Al-Qur'an klasik hingga kontemporer serta menerapkannya dalam menganalisis isu-isu aktual.</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="profile-block">
+                        <h3>CPL</h3>
+                        <table class="profile-table">
+                            <colgroup>
+                                <col style="width:88px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr><th>Kode</th><th>Capaian Pembelajaran Lulusan</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>CPL 1</td><td>Mampu mengintegrasikan nilai-nilai keilmuan, ke-Islaman, kemanusiaan, kebangsaan, dan kearifan lokal dalam kajian hukum keluarga Islam serta memproyeksikannya dalam pembelajaran, penelitian, dan pengabdian masyarakat.</td></tr>
+                                <tr><td>CPL 2</td><td>Mampu memadukan konsep, teori, metode, dan falsafah bidang Hukum Keluarga melalui pendekatan Ushul Fiqh dan Sosio-Antropologi yang bercorak integratif-dialektik dengan menghargai keanekaragaman pandangan.</td></tr>
+                                <tr><td>CPL 3</td><td>Mampu mengkonstruksi penalaran dan argumentasi hukum keluarga untuk memecahkan problematika hukum melalui fatwa, putusan, dan opini hukum dengan mengutamakan keadilan dan kemaslahatan.</td></tr>
+                                <tr><td>CPL 4</td><td>Mampu menghasilkan karya ilmiah hasil penelitian bidang hukum keluarga yang dipublikasikan dalam jurnal bereputasi dan bermanfaat bagi pengembangan keilmuan dengan memanfaatkan teknologi informasi.</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="profile-block">
+                        <h3>Metode Pembelajaran</h3>
+                        <table class="profile-table">
+                            <colgroup>
+                                <col style="width:56px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr><th>No</th><th>Metode</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>01</td><td>Ceramah interaktif &amp; diskusi kelompok (Student Centered Learning)</td></tr>
+                                <tr><td>02</td><td>Presentasi kelompok &amp; studi kasus</td></tr>
+                                <tr><td>03</td><td>Simulasi sejarah &amp; workshop analisis teks/mushaf</td></tr>
+                                <tr><td>04</td><td>Diskusi kelompok terpimpin &amp; analisis ayat</td></tr>
+                                <tr><td>05</td><td>Seminar mini &amp; debat terpimpin</td></tr>
+                                <tr><td>06</td><td>Studi literatur &amp; diskusi panel</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="profile-block">
+                        <h3>Komponen Penilaian</h3>
+                        <table class="profile-table weighted">
+                            <colgroup>
+                                <col>
+                                <col style="width:90px">
+                            </colgroup>
+                            <thead>
+                                <tr><th>Komponen</th><th>Bobot</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Tugas &amp; partisipasi mingguan (Pertemuan 1-7, 9-15)</td><td>70%</td></tr>
+                                <tr><td>Ujian Tengah Semester (UTS)</td><td>15%</td></tr>
+                                <tr><td>Ujian Akhir Semester (UAS)</td><td>15%</td></tr>
+                            </tbody>
+                            <tfoot>
+                                <tr><td>Total</td><td>100%*</td></tr>
+                            </tfoot>
+                        </table>
+                        <p class="note">*Sesuai RPS; rincian bobot penilaian tiap pertemuan mengikuti kolom Bobot Penilaian pada tabel RPS.</p>
+                    </article>
+
+                    <article class="profile-block full-width">
+                        <h3>Kontrak Perkuliahan</h3>
+                        <table class="profile-table kv">
+                            <tbody>
+                                <tr><th>Mata Kuliah</th><td>Ulumul Qur'an</td></tr>
+                                <tr><th>Rumpun MK</th><td>Mata Kuliah Keprodian</td></tr>
+                                <tr><th>Bobot SKS</th><td>3 SKS</td></tr>
+                                <tr><th>Semester</th><td>II</td></tr>
+                                <tr><th>Tanggal Penyusunan</th><td>1 September 2025</td></tr>
+                                <tr><th>Dosen Pengampu</th><td>Dr. Rahmawati, M.Ag &amp; Dr. Mustaming, M.HI</td></tr>
+                                <tr><th>Koordinator MK</th><td>Dr. Rahmawati, M.Ag</td></tr>
+                                <tr><th>Ketua Program Studi</th><td>Hardianto, S.H., M.H</td></tr>
+                                <tr><th>Program Studi</th><td>Hukum Keluarga dan Hukum Ekonomi Syariah</td></tr>
+                                <tr><th>Fakultas</th><td>Fakultas Syariah, UIN Palopo</td></tr>
+                            </tbody>
+                        </table>
+                        <p>Perkuliahan dilaksanakan selama 16 pertemuan (termasuk UTS pada pertemuan ke-8 dan UAS pada pertemuan ke-16). Mahasiswa wajib mengikuti diskusi, mengumpulkan tugas tepat waktu, aktif dalam presentasi/analisis teks, dan menjunjung tinggi etika akademik.</p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RPS ================= -->
+
+        <section id="page-rps" class="app-page" data-title="RPS">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">RPS</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">16 pertemuan</span>Rencana Pembelajaran Semester</h2>
+
+                <div class="rps-wrapper">
+
+                    <div class="timeline">
+
+                        <div class="timeline-item" data-week="1"><span class="week">1</span>Pengantar Ulumul Qur'an</div>
+                        <div class="timeline-item" data-week="2"><span class="week">2</span>Wahyu: Hakikat &amp; Bentuknya</div>
+                        <div class="timeline-item" data-week="3"><span class="week">3</span>Nuzulul Qur'an: Makkiyah &amp; Madaniyah</div>
+                        <div class="timeline-item" data-week="4"><span class="week">4</span>Jam'ul Qur'an (Kodifikasi)</div>
+                        <div class="timeline-item" data-week="5"><span class="week">5</span>Rasm Utsmani &amp; Qira'at Sab'ah</div>
+                        <div class="timeline-item" data-week="6"><span class="week">6</span>Asbabun Nuzul</div>
+                        <div class="timeline-item" data-week="7"><span class="week">7</span>Nasikh wa Mansukh</div>
+                        <div class="timeline-item exam" data-week="8"><span class="week">8</span>UTS</div>
+                        <div class="timeline-item" data-week="9"><span class="week">9</span>Muhkam &amp; Mutasyabih</div>
+                        <div class="timeline-item" data-week="10"><span class="week">10</span>Amm-Khass, Mutlaq-Muqayyad</div>
+                        <div class="timeline-item" data-week="11"><span class="week">11</span>Majaz, Kinayah &amp; Musytarak</div>
+                        <div class="timeline-item" data-week="12"><span class="week">12</span>I'jazul Qur'an</div>
+                        <div class="timeline-item" data-week="13"><span class="week">13</span>Metode Tafsir</div>
+                        <div class="timeline-item" data-week="14"><span class="week">14</span>Corak-corak Tafsir</div>
+                        <div class="timeline-item" data-week="15"><span class="week">15</span>Tafsir Kontemporer &amp; Isu Mutakhir</div>
+                        <div class="timeline-item exam" data-week="16"><span class="week">16</span>UAS</div>
+
+                    </div>
+
+                    <div class="rps-table">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Minggu</th>
+                                    <th>Materi</th>
+                                    <th>CPMK</th>
+                                    <th>Metode</th>
+                                    <th>Penilaian</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>1</td>
+                                    <td>Pengantar Ulumul Qur'an</td>
+                                    <td>CPMK-1 — Mendefinisikan Ulumul Qur'an, ruang lingkup, dan urgensi mempelajarinya</td>
+                                    <td>Ceramah interaktif, diskusi kelompok</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Wahyu: Hakikat, Karakteristik &amp; Mekanisme Turunnya</td>
+                                    <td>CPMK-1 — Menjelaskan hakikat wahyu serta cara-cara turunnya wahyu kepada Nabi Muhammad SAW</td>
+                                    <td>Presentasi kelompok, studi kasus</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Sejarah Turunnya Al-Qur'an (Nuzulul Qur'an): Makkiyah &amp; Madaniyah</td>
+                                    <td>CPMK-2 — Memetakan periode Makkiyah &amp; Madaniyah beserta ciri-cirinya</td>
+                                    <td>Analisis ayat, diskusi</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Sejarah Kodifikasi &amp; Pembukuan Al-Qur'an (Jam'ul Qur'an)</td>
+                                    <td>CPMK-2 — Merekonstruksi sejarah pengumpulan Al-Qur'an masa Nabi, Abu Bakar &amp; Utsman</td>
+                                    <td>Simulasi sejarah, ceramah</td>
+                                    <td>10%</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Rasm Utsmani &amp; Qira'at Sab'ah</td>
+                                    <td>CPMK-2 — Menjelaskan kaidah Rasm Utsmani &amp; memahami keragaman Qira'at</td>
+                                    <td>Workshop analisis mushaf, diskusi</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Asbabun Nuzul (Sebab-sebab Turunnya Ayat)</td>
+                                    <td>CPMK-2 — Menganalisis Asbabun Nuzul &amp; menerapkannya dalam penafsiran</td>
+                                    <td>Diskusi kelompok, analisis kitab Asbabun Nuzul</td>
+                                    <td>10%</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Nasikh wa Mansukh</td>
+                                    <td>CPMK-2 — Memahami konsep Nasikh-Mansukh, syarat, &amp; hikmahnya</td>
+                                    <td>Ceramah, tanya jawab, analisis ayat</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr class="exam-row">
+                                    <td>8</td>
+                                    <td><strong>Ujian Tengah Semester</strong> — Materi Pertemuan 1-7</td>
+                                    <td>Evaluasi CPMK 1-2</td>
+                                    <td>UTS — tes tertulis (esai &amp; analisis kasus)</td>
+                                    <td>15%</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Muhkam &amp; Mutasyabih</td>
+                                    <td>CPMK-3 — Membedakan ayat Muhkam &amp; Mutasyabih serta pendekatan memahaminya</td>
+                                    <td>Diskusi, presentasi</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Amm dan Khass, Mutlaq dan Muqayyad</td>
+                                    <td>CPMK-3 — Mengidentifikasi &amp; menganalisis implikasi hukum ayat amm-khass, mutlaq-muqayyad</td>
+                                    <td>Workshop, studi kasus</td>
+                                    <td>10%</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>Majaz, Kinayah &amp; Musytarak (Gaya Bahasa Al-Qur'an)</td>
+                                    <td>CPMK-3 — Mengenali gaya bahasa Al-Qur'an &amp; pengaruhnya terhadap penafsiran</td>
+                                    <td>Analisis teks, diskusi</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>I'jazul Qur'an (Kemukjizatan Al-Qur'an)</td>
+                                    <td>CPMK-3 — Menganalisis aspek-aspek kemukjizatan Al-Qur'an</td>
+                                    <td>Seminar mini, debat terpimpin</td>
+                                    <td>10%</td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>Metode Tafsir: Tahlili, Ijmali, Maudhu'i, Muqaran</td>
+                                    <td>CPMK-4 — Membedakan metode tafsir klasik hingga kontemporer</td>
+                                    <td>Presentasi, komparasi kitab tafsir</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>Corak-corak Tafsir (Pemikiran dalam Tafsir)</td>
+                                    <td>CPMK-4 — Memetakan corak-corak pemikiran dalam tafsir</td>
+                                    <td>Diskusi, studi literatur</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>Tafsir Kontemporer &amp; Isu-isu Mutakhir</td>
+                                    <td>CPMK-4 — Mengkritisi pendekatan tafsir kontemporer &amp; isu mutakhir</td>
+                                    <td>Seminar, diskusi panel</td>
+                                    <td>10%</td>
+                                </tr>
+                                <tr class="exam-row">
+                                    <td>16</td>
+                                    <td><strong>Ujian Akhir Semester</strong> — Materi Pertemuan 1-15</td>
+                                    <td>Evaluasi seluruh CPMK</td>
+                                    <td>UAS — tes tertulis komprehensif (esai)</td>
+                                    <td>15%</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MATERI ================= -->
+
+        <section id="page-materi" class="app-page" data-title="Materi">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Materi</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">16 pertemuan</span>Materi Perkuliahan</h2>
+
+                <div class="materi-action">
+
+                    <input type="text" placeholder="Cari materi…" id="materi-search">
+
+                    <div class="filter">
+                        <button class="filter-btn active">Semua</button>
+                        <button class="filter-btn">Sejarah &amp; Kodifikasi</button>
+                        <button class="filter-btn">Kebahasaan</button>
+                        <button class="filter-btn">Tafsir</button>
+                    </div>
+
+                </div>
+
+                <div class="materi-list">
+
+                    <article class="card materi-card" data-goto="pertemuan-1" tabindex="0" role="button" aria-label="Buka detail Pertemuan 1"><span class="tag">Pertemuan 1</span><h3>Pengantar Ulumul Qur'an</h3><p>Definisi Ulumul Qur'an, ruang lingkup kajian, urgensi mempelajarinya bagi studi Islam, dan sejarah perkembangannya sebagai disiplin ilmu.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-2" tabindex="0" role="button" aria-label="Buka detail Pertemuan 2"><span class="tag">Pertemuan 2</span><h3>Wahyu: Hakikat dan Bentuk-bentuknya</h3><p>Pengertian dan hakikat wahyu, perbedaan wahyu Al-Qur'an dengan wahyu sebelumnya, serta cara-cara turunnya wahyu kepada Nabi Muhammad SAW.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-3" tabindex="0" role="button" aria-label="Buka detail Pertemuan 3"><span class="tag">Pertemuan 3</span><h3>Sejarah Turunnya Al-Qur'an (Nuzulul Qur'an)</h3><p>Periodisasi Makkiyah dan Madaniyah, ciri-ciri surat Makkiyah dan Madaniyah, serta implikasinya terhadap pemahaman ayat.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-4" tabindex="0" role="button" aria-label="Buka detail Pertemuan 4"><span class="tag">Pertemuan 4</span><h3>Sejarah Kodifikasi dan Pembukuan Al-Qur'an (Jam'ul Qur'an)</h3><p>Proses pengumpulan Al-Qur'an pada masa Nabi, Abu Bakar, dan Utsman, serta latar belakang penulisan Mushaf Utsmani.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-5" tabindex="0" role="button" aria-label="Buka detail Pertemuan 5"><span class="tag">Pertemuan 5</span><h3>Rasm Utsmani dan Qira'at Sab'ah</h3><p>Kaidah penulisan Rasm Utsmani, keragaman Qira'at Sab'ah, dan pengaruh perbedaan qira'at terhadap penafsiran.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-6" tabindex="0" role="button" aria-label="Buka detail Pertemuan 6"><span class="tag">Pertemuan 6</span><h3>Asbabun Nuzul</h3><p>Pengertian Asbabun Nuzul, identifikasi riwayat yang shahih dan lemah, serta penerapannya dalam menafsirkan ayat.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-7" tabindex="0" role="button" aria-label="Buka detail Pertemuan 7"><span class="tag">Pertemuan 7</span><h3>Nasikh wa Mansukh</h3><p>Konsep nasikh-mansukh, syarat-syarat terjadinya naskh, contoh ayat nasikh-mansukh, serta hikmah di baliknya.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card exam" data-goto="ujian" tabindex="0" role="button" aria-label="Buka menu UTS/UAS"><span class="tag tag-exam">Pertemuan 8</span><h3>Ujian Tengah Semester (UTS)</h3><p>Evaluasi materi Pertemuan 1–7 dalam bentuk tes tertulis (esai dan analisis kasus).</p><span class="open-hint">Buka UTS/UAS &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-9" tabindex="0" role="button" aria-label="Buka detail Pertemuan 9"><span class="tag">Pertemuan 9</span><h3>Muhkam dan Mutasyabih</h3><p>Perbedaan ayat muhkam dan mutasyabih, serta pendekatan yang tepat dalam memahami ayat-ayat mutasyabih.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-10" tabindex="0" role="button" aria-label="Buka detail Pertemuan 10"><span class="tag">Pertemuan 10</span><h3>Amm dan Khass, Mutlaq dan Muqayyad</h3><p>Identifikasi ayat amm-khass dan mutlaq-muqayyad, serta implikasi hukumnya terhadap penafsiran.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-11" tabindex="0" role="button" aria-label="Buka detail Pertemuan 11"><span class="tag">Pertemuan 11</span><h3>Majaz, Kinayah, dan Musytarak</h3><p>Gaya bahasa Al-Qur'an: majaz (metafora), kinayah (kiasan), dan musytarak (lafaz bermakna ganda), serta pengaruhnya terhadap penafsiran.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-12" tabindex="0" role="button" aria-label="Buka detail Pertemuan 12"><span class="tag">Pertemuan 12</span><h3>I'jazul Qur'an (Mukjizat Al-Qur'an)</h3><p>Aspek-aspek kemukjizatan Al-Qur'an dan tantangan i'jaz ilmi di era modern.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-13" tabindex="0" role="button" aria-label="Buka detail Pertemuan 13"><span class="tag">Pertemuan 13</span><h3>Metode Tafsir</h3><p>Metode tafsir tahlili, ijmali, maudhu'i, dan muqaran beserta karakteristik dan langkah-langkahnya.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-14" tabindex="0" role="button" aria-label="Buka detail Pertemuan 14"><span class="tag">Pertemuan 14</span><h3>Corak-corak Tafsir</h3><p>Pemetaan corak-corak pemikiran dalam tafsir serta konteks historis kemunculannya, termasuk corak tafsir 'ilmi.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card" data-goto="pertemuan-15" tabindex="0" role="button" aria-label="Buka detail Pertemuan 15"><span class="tag">Pertemuan 15</span><h3>Tafsir Kontemporer dan Isu-isu Mutakhir</h3><p>Pendekatan tafsir kontemporer, isu gender dalam Al-Qur'an dengan pendekatan maudhu'i, serta kelebihan dan kekurangan hermeneutika dalam tafsir.</p><span class="open-hint">Buka detail &rarr;</span></article>
+                    <article class="card materi-card exam" data-goto="ujian" tabindex="0" role="button" aria-label="Buka menu UTS/UAS"><span class="tag tag-exam">Pertemuan 16</span><h3>Ujian Akhir Semester (UAS)</h3><p>Evaluasi seluruh materi perkuliahan dalam bentuk tes tertulis komprehensif (esai).</p><span class="open-hint">Buka UTS/UAS &rarr;</span></article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DETAIL PERTEMUAN (dibuka dari kartu Materi) ================= -->
+
+        <section id="page-pertemuan" class="app-page" data-title="Pertemuan">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="materi">&larr; Materi</button>
+                <span class="page-crumb" id="pertemuan-crumb">Pertemuan</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow" id="pertemuan-eyebrow">Pertemuan</span><span id="pertemuan-title">Judul Pertemuan</span></h2>
+
+                <article class="profile-block full-width">
+                    <h3>Modul Ringkas</h3>
+                    <div id="pertemuan-modul"><!-- diisi otomatis oleh core.js --></div>
+                </article>
+
+                <h3 class="pertemuan-subheading">Video Pembelajaran</h3>
+                <div class="video-list pertemuan-video-list">
+
+                    <article class="card video-card" id="pertemuan-video-card" data-youtube="" tabindex="0" role="button" aria-label="Putar video pertemuan ini">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3 id="pertemuan-video-title">Video Pertemuan</h3>
+                        <p id="pertemuan-video-desc"></p>
+                    </article>
+
+                </div>
+
+                <h3 class="pertemuan-subheading">Studi Kasus</h3>
+                <article class="card pertemuan-case">
+                    <p id="pertemuan-case-text"></p>
+                </article>
+
+                <h3 class="pertemuan-subheading">Uji Formatif</h3>
+                <article class="profile-block full-width formatif-block" id="pertemuan-formatif-block">
+
+                    <h4 class="formatif-heading">A. Pilihan Ganda <span class="formatif-count">(10 soal)</span></h4>
+                    <div id="pertemuan-mcq-list" class="formatif-mcq-list"><!-- diisi otomatis oleh core.js --></div>
+
+                    <h4 class="formatif-heading">B. Soal Esai <span class="formatif-count">(5 soal)</span></h4>
+                    <div id="pertemuan-essay-list" class="formatif-essay-list"><!-- diisi otomatis oleh core.js --></div>
+
+                    <button type="button" id="pertemuan-formatif-submit">Kumpulkan Uji Formatif</button>
+                    <p class="formatif-result" id="pertemuan-formatif-result"></p>
+
+                    <div class="formatif-send-wa" id="formatif-send-wa" hidden>
+                        <p class="formatif-identity-note" id="formatif-identity-note"></p>
+                        <button type="button" id="formatif-edit-identity-btn" class="ghost-small">Ubah data</button>
+                        <button type="button" id="formatif-email-btn">Kirim jawaban Esai</button>
+                    </div>
+
+                    <p class="formatif-empty" id="pertemuan-formatif-empty" hidden>Uji formatif untuk pertemuan ini belum tersedia.</p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= VIDEO ================= -->
+
+        <section id="page-video" class="app-page" data-title="Video">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Video</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Tonton</span>Video Pembelajaran</h2>
+
+                <div class="video-filter">
+                    <button class="filter-btn active">Semua</button>
+                    <button class="filter-btn">Sejarah &amp; Kodifikasi</button>
+                    <button class="filter-btn">Tafsir</button>
+                </div>
+
+                <div class="video-list">
+
+                    <article class="card video-card" data-youtube="https://youtu.be/sy1xEvioAuU" data-week="1" tabindex="0" role="button" aria-label="Putar video: Pengantar Ulumul Qur'an">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Pengantar Ulumul Qur'an</h3>
+                        <p>Pertemuan 1 · Definisi, ruang lingkup &amp; urgensi</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/n-31fytNcbI" data-week="2" tabindex="0" role="button" aria-label="Putar video: Wahyu">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Wahyu: Hakikat dan Bentuk-bentuknya</h3>
+                        <p>Pertemuan 2 · Hakikat &amp; mekanisme turunnya wahyu</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/LMwrr2H87yc" data-week="3" tabindex="0" role="button" aria-label="Putar video: Nuzulul Qur'an">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Sejarah Turunnya Al-Qur'an</h3>
+                        <p>Pertemuan 3 · Makkiyah &amp; Madaniyah</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/pYOAJarYXmg" data-week="4" tabindex="0" role="button" aria-label="Putar video: Jam'ul Qur'an">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Sejarah Kodifikasi Al-Qur'an</h3>
+                        <p>Pertemuan 4 · Jam'ul Qur'an masa Nabi, Abu Bakar &amp; Utsman</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/e9H43IB-lf4" data-week="5" tabindex="0" role="button" aria-label="Putar video: Rasm Utsmani & Qira'at">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Rasm Utsmani dan Qira'at Sab'ah</h3>
+                        <p>Pertemuan 5 · Kaidah rasm &amp; keragaman qira'at</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/MvyxmXAy69o" data-week="6" tabindex="0" role="button" aria-label="Putar video: Asbabun Nuzul">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Asbabun Nuzul</h3>
+                        <p>Pertemuan 6 · Sebab-sebab turunnya ayat</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/_zodv7MjrDY" data-week="7" tabindex="0" role="button" aria-label="Putar video: Nasikh wa Mansukh">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Nasikh wa Mansukh</h3>
+                        <p>Pertemuan 7 · Konsep, syarat &amp; hikmah naskh</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/xc84n6vXDJM" data-week="9" tabindex="0" role="button" aria-label="Putar video: Muhkam dan Mutasyabih">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Muhkam dan Mutasyabih</h3>
+                        <p>Pertemuan 9 · Perbedaan &amp; pendekatan pemahaman</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/6zfJM0uU2s4" data-week="10" tabindex="0" role="button" aria-label="Putar video: Amm-Khass, Mutlaq-Muqayyad">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Amm dan Khass, Mutlaq dan Muqayyad</h3>
+                        <p>Pertemuan 10 · Identifikasi &amp; implikasi hukum</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/i5BmArx0qik" data-week="11" tabindex="0" role="button" aria-label="Putar video: Majaz, Kinayah & Musytarak">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Majaz, Kinayah, dan Musytarak</h3>
+                        <p>Pertemuan 11 · Gaya bahasa Al-Qur'an</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/F_asdhFQmPk" data-week="12" tabindex="0" role="button" aria-label="Putar video: I'jazul Qur'an">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>I'jazul Qur'an</h3>
+                        <p>Pertemuan 12 · Aspek kemukjizatan Al-Qur'an</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/4D2kEPoMl40" data-week="13" tabindex="0" role="button" aria-label="Putar video: Metode Tafsir">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Metode Tafsir</h3>
+                        <p>Pertemuan 13 · Tahlili, ijmali, maudhu'i &amp; muqaran</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/hXV3pBUWGGs" data-week="14" tabindex="0" role="button" aria-label="Putar video: Corak-corak Tafsir">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Corak-corak Tafsir</h3>
+                        <p>Pertemuan 14 · Pemikiran dalam tafsir</p>
+                    </article>
+
+                    <article class="card video-card" data-youtube="https://youtu.be/9AGbwE68i5w" data-week="15" tabindex="0" role="button" aria-label="Putar video: Tafsir Kontemporer">
+                        <div class="video-thumb"><span class="play-icon">▶</span></div>
+                        <h3>Tafsir Kontemporer dan Isu-isu Mutakhir</h3>
+                        <p>Pertemuan 15 · Isu gender &amp; hermeneutika</p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STUDI KASUS ================= -->
+
+        <section id="page-kasus" class="app-page" data-title="Studi Kasus">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Studi Kasus</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Praktik</span>Studi Kasus</h2>
+
+                <div class="case-list">
+
+                    <article class="card"><h3>Ciri-ciri Surat Al-'Alaq dan Al-Baqarah</h3><p>Pertemuan 3 · Analisis ciri-ciri surat periode Makkiyah dan Madaniyah.</p></article>
+                    <article class="card"><h3>Rekonstruksi Timeline Kodifikasi Al-Qur'an</h3><p>Pertemuan 4 · Perbandingan proses kodifikasi masa Abu Bakar dan Utsman.</p></article>
+                    <article class="card"><h3>Perbedaan Qira'at dalam Kitab Tafsir</h3><p>Pertemuan 5 · Analisis pengaruh keragaman qira'at terhadap penafsiran.</p></article>
+                    <article class="card"><h3>Asbabun Nuzul Surat Pendek</h3><p>Pertemuan 6 · Analisis riwayat Asbabun Nuzul yang shahih dan lemah.</p></article>
+                    <article class="card"><h3>Naskh dalam Tafsir At-Tabari</h3><p>Pertemuan 7 · Identifikasi contoh ayat nasikh-mansukh.</p></article>
+                    <article class="card"><h3>I'jaz Ilmi di Era Modern</h3><p>Pertemuan 12 · Analisis tantangan kemukjizatan ilmiah Al-Qur'an masa kini.</p></article>
+                    <article class="card"><h3>Perbandingan Dua Kitab Tafsir</h3><p>Pertemuan 13 · Analisis komparatif metode tafsir tahlili dan maudhu'i.</p></article>
+                    <article class="card"><h3>Isu Gender dalam Pendekatan Maudhu'i</h3><p>Pertemuan 15 · Analisis isu kontemporer dengan hermeneutika tafsir.</p></article>
+
+                </div>
+
+                <div class="case-workspace">
+
+                    <h3>Analisis Kasus</h3>
+
+                    <textarea placeholder="Tuliskan analisis Anda..."></textarea>
+
+                    <button type="button">Kirim Analisis</button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUIZ ================= -->
+
+        <section id="page-quiz" class="app-page" data-title="Quiz">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Quiz</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Uji pemahaman</span>Quiz Ulumul Qur'an</h2>
+
+                <div class="quiz-progress">
+                    <div class="progress-bar"><span style="width:0%"></span></div>
+                    <small>Soal 1 dari 5</small>
+                </div>
+
+                <div class="quiz-container">
+
+                    <div class="card quiz-question">
+                        <h3>1. Ayat yang turun sebelum Nabi Muhammad SAW hijrah ke Madinah disebut ayat...</h3>
+                        <label><input type="radio" name="q1"> Madaniyah</label>
+                        <label><input type="radio" name="q1"> Makkiyah</label>
+                        <label><input type="radio" name="q1"> Muhkam</label>
+                        <label><input type="radio" name="q1"> Mansukh</label>
+                    </div>
+
+                    <div class="card quiz-question">
+                        <h3>2. Sebab atau peristiwa yang melatarbelakangi turunnya suatu ayat disebut...</h3>
+                        <label><input type="radio" name="q2"> Nasikh</label>
+                        <label><input type="radio" name="q2"> Rasm Utsmani</label>
+                        <label><input type="radio" name="q2"> Asbabun Nuzul</label>
+                        <label><input type="radio" name="q2"> Qira'at</label>
+                    </div>
+
+                    <button type="button">Kumpulkan Jawaban</button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= UJIAN ================= -->
+
+        <section id="page-ujian" class="app-page" data-title="UTS/UAS">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">UTS/UAS</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Evaluasi</span>UTS &amp; UAS</h2>
+
+                <div class="exam-container">
+
+                    <article class="exam-card">
+                        <h3>UTS</h3>
+                        <p>Materi Pertemuan 1–7</p>
+                        <p>Bentuk: Tes tertulis (esai &amp; analisis kasus) · Bobot 15%</p>
+                        <p class="timer">Timer</p>
+                    </article>
+
+                    <article class="exam-card">
+                        <h3>UAS</h3>
+                        <p>Materi Pertemuan 1–15</p>
+                        <p>Bentuk: Tes tertulis komprehensif (esai), mencakup seluruh capaian pembelajaran · Bobot 15%</p>
+                        <p class="timer">Timer</p>
+                    </article>
+
+                </div>
+
+                <article class="profile-block full-width" style="margin-top:20px;">
+                    <h3>Rubrik Penilaian Esai UTS/UAS</h3>
+                    <table class="profile-table weighted">
+                        <colgroup>
+                            <col>
+                            <col style="width:90px">
+                        </colgroup>
+                        <thead>
+                            <tr><th>Aspek</th><th>Bobot</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Ketepatan Konsep</td><td>25%</td></tr>
+                            <tr><td>Kedalaman Analisis</td><td>30%</td></tr>
+                            <tr><td>Penggunaan Referensi</td><td>20%</td></tr>
+                            <tr><td>Argumentasi Akademik</td><td>15%</td></tr>
+                            <tr><td>Sistematika Penulisan</td><td>10%</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr><td>Total</td><td>100%</td></tr>
+                        </tfoot>
+                    </table>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= REFERENSI ================= -->
+
+        <section id="page-referensi" class="app-page" data-title="Referensi">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Referensi</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Bacaan</span>Referensi</h2>
+
+                <div class="reference-list">
+
+                    <article class="card"><span class="tag">Utama</span><p>Al-Zarkasyi. <em>Al-Burhan fi Ulum al-Qur'an</em>.</p></article>
+                    <article class="card"><span class="tag">Utama</span><p>Al-Suyuthi. <em>Al-Itqan fi Ulum al-Qur'an</em>.</p></article>
+                    <article class="card"><span class="tag">Utama</span><p>Manna' Al-Qattan. <em>Mabahits fi Ulum al-Qur'an</em>.</p></article>
+                    <article class="card"><span class="tag">Utama</span><p>Subhi Al-Salih. <em>Mabahits fi Ulum al-Qur'an</em>.</p></article>
+                    <article class="card"><span class="tag">Utama</span><p>Ahmad von Denffer. <em>Ulum al-Qur'an: An Introduction to the Sciences of the Qur'an</em>.</p></article>
+                    <article class="card"><span class="tag">Utama</span><p>Hussein Abdul-Raof. <em>Qur'anic Sciences: An Introduction</em>.</p></article>
+                    <article class="card"><span class="tag">Pendukung</span><p>Prof. Dr. H. Abdul Malik Abdul Karim Amrullah (HAMKA). <em>Pengantar Studi Ilmu Al-Qur'an (Al-Qur'an dan Ulumul Qur'an)</em>.</p></article>
+                    <article class="card"><span class="tag">Pendukung</span><p>Prof. Dr. H. M. Quraish Shihab, M.A. <em>Studi Ilmu-Ilmu Al-Qur'an</em>.</p></article>
+                    <article class="card"><span class="tag">Pendukung</span><p>Dr. Ahmad von Denffer. <em>Ulumul Qur'an: Sebuah Pengantar</em>. Jakarta: PT. Mizan Publika.</p></article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DOWNLOAD ================= -->
+
+        <section id="page-download" class="app-page" data-title="Download">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Download</span>
+            </div>
+
+            <div class="container">
+
+                <h2><span class="eyebrow">Berkas</span>Download Materi</h2>
+
+                <div class="download-list">
+
+                    <article class="card download-item"><span class="file-icon">⬇</span><div><h3>RPS Ulumul Qur'an</h3><p>Rencana Pembelajaran Semester lengkap 16 pertemuan.</p></div><button type="button">Download</button></article>
+                    <article class="card download-item"><span class="file-icon">⬇</span><div><h3>Kontrak Perkuliahan</h3><p>Kesepakatan aturan &amp; tata tertib perkuliahan.</p></div><button type="button">Download</button></article>
+                    <article class="card download-item"><span class="file-icon">⬇</span><div><h3>Rubrik Penilaian Esai</h3><p>Rubrik penilaian UTS/UAS (ketepatan konsep, analisis, referensi, argumentasi, sistematika).</p></div><button type="button">Download</button></article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= KONTAK ================= -->
+
+        <section id="page-kontak" class="app-page" data-title="Kontak">
+
+            <div class="page-topbar">
+                <button type="button" class="back-btn" data-goto="home">&larr; Beranda</button>
+                <span class="page-crumb">Kontak</span>
+            </div>
+
+            <div class="container kontak-grid">
+
+                <div class="contact-info">
+
+                    <h2><span class="eyebrow">Hubungi</span>Dosen Pengampu</h2>
+                    <h3>Dr. Rahmawati, M.Ag &amp; Dr. Mustaming, M.HI</h3>
+                    <p>Koordinator Mata Kuliah: Dr. Rahmawati, M.Ag</p>
+                    <p>Ketua Program Studi: Hardianto, S.H., M.H</p>
+                    <p>Program Studi Hukum Keluarga dan Hukum Ekonomi Syariah · Fakultas Syariah UIN Palopo</p>
+
+                </div>
+
+                <form id="kontak-form">
+                    <input type="text" id="kontak-nama" placeholder="Nama" required>
+                    <input type="text" id="kontak-nim" placeholder="NIM" required>
+                    <input type="text" id="kontak-subjek" placeholder="Subjek" required>
+                    <textarea id="kontak-pesan" placeholder="Pesan" required></textarea>
+                    <button type="submit">Kirim</button>
+                </form>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- Overlay backdrop untuk mobile menu -->
+    <div id="nav-backdrop"></div>
+
+    <!-- Modal Identitas Mahasiswa -->
+    <div id="identity-modal" class="identity-modal" hidden aria-hidden="true">
+        <div class="identity-modal-backdrop" data-close-identity></div>
+        <div class="identity-modal-inner" role="dialog" aria-modal="true" aria-label="Isi identitas mahasiswa">
+            <button type="button" class="identity-modal-close" data-close-identity aria-label="Tutup">&times;</button>
+            <h3>Identitas Mahasiswa</h3>
+            <p class="identity-modal-desc">Diisi sekali saja. Data ini dipakai untuk mengumpulkan Uji Formatif ke dosen pengampu via Email.</p>
+            <form id="identity-form">
+                <input type="text" id="identity-nim" placeholder="NIM" required>
+                <input type="text" id="identity-nama" placeholder="Nama Lengkap" required>
+                <input type="text" id="identity-kelas" placeholder="Kelas / Angkatan" required>
+                <button type="submit">Simpan &amp; Lanjutkan</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal player YouTube -->
+    <div id="video-modal" class="video-modal" hidden aria-hidden="true">
+        <div class="video-modal-backdrop" data-close-modal></div>
+        <div class="video-modal-inner" role="dialog" aria-modal="true" aria-label="Pemutar video">
+            <button type="button" class="video-modal-close" data-close-modal aria-label="Tutup video">&times;</button>
+            <h3 id="video-modal-title"></h3>
+            <div class="video-embed">
+                <iframe id="video-modal-frame"
+                        src=""
+                        title="Pemutar video YouTube"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="../shared/core.js"></script>
+    <script src="data.js"></script>
+</body>
+
+</html>
